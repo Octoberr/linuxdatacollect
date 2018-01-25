@@ -27,7 +27,8 @@ class CONTROL:
     def writeinfotolog(self):
         # call("python {} 2>&1 | tail -1 >{}".format(self.infopath, self.logpath), shell=True)
         fdout = open(self.logpath, 'a')
-        p = Popen(self.shellpath, stdout=fdout, shell=True)
+        fderr = open(self.logpath, 'a')
+        p = Popen(self.shellpath, stdout=fdout, stderr=fderr, shell=True)
         if p.poll():
             return
         p.wait()
@@ -43,6 +44,7 @@ class CONTROL:
         self.writeinfotolog()
         time.sleep(11)
         self.killshell()
-        self.collectwifilist()
         print datetime.datetime.now(), "Start insert to mongo."
+        self.collectwifilist()
+
 

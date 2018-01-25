@@ -50,7 +50,7 @@ class WIFINAME:
     # 结束循环后kill自己,并且删除log文件
     def killmyself(self):
         call("rm -rf {}".format(self.logpath), shell=True)
-        call("ps -ef|grep getwifilist.py|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
+        call("ps -ef|grep startwifiserver.py|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
 
     def startcollectinfo(self, wifilist):
         for line in wifilist:
@@ -69,7 +69,7 @@ class WIFINAME:
                 tmp['MB'] = list[6]
                 tmp['ESSID'] = list[-2]
                 self.insertintomongo(tmp)
-        print datetime.datetime.now(), "Complete the wifi scan."
+        print datetime.datetime.now(), "Complete store the info."
         self.killmyself()
 
 
