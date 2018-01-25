@@ -19,6 +19,7 @@ class INFO:
     def startshell(self):
         # 执行脚本前先清理下log文件
         call("rm -rf {}".format(self.logpath), shell=True)
+        print "start the shell"
         # 执行脚本
         call(self.shellpath, shell=True)
 
@@ -41,5 +42,6 @@ class INFO:
 
 
 if __name__ == '__main__':
+    print " start"
     info = INFO()
     info.strat()
