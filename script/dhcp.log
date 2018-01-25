@@ -1,0 +1,21 @@
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 13 leases to leases file.
+Listening on LPF/wlan0/be:ad:97:c6:b1:45/10.0.0.0/24
+Sending on   LPF/wlan0/be:ad:97:c6:b1:45/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+reuse_lease: lease age 280 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPDISCOVER from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+reuse_lease: lease age 281 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+reuse_lease: lease age 281 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
