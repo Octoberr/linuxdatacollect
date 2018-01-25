@@ -13,9 +13,10 @@ app = Flask(__name__)
 @app.route('/api/startcollect', methods=['post'])
 def starttheserver():
     args = json.loads(request.data)
+    seconds = args['seconds']
     if args['start'] == 1:
         control = CONTROL()
-        control.strat()
+        control.strat(seconds)
         orderinfo = {"complete": 1}
     return Response(json.dumps(orderinfo), mimetype="application/json")
 

@@ -16,7 +16,6 @@ class CONTROL:
 
     def __init__(self):
         self.pypath = os.path.join(fileDir, 'getwifilist.py')
-        self.infopath = os.path.join(fileDir, 'getwifiinfo.py')
         self.logpath = "/home/wifi.log"
         self.shellpath = "/home/getallwifi.sh"
 
@@ -24,6 +23,7 @@ class CONTROL:
     def collectwifilist(self):
         call("python {}".format(self.pypath), shell=True)
 
+    # 保存shell的所有输出
     def writeinfotolog(self):
         # call("python {} 2>&1 | tail -1 >{}".format(self.infopath, self.logpath), shell=True)
         fdout = open(self.logpath, 'a')
@@ -39,10 +39,10 @@ class CONTROL:
         call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
 
     # 程序运行入口
-    def strat(self):
+    def strat(self, seconds):
         print datetime.datetime.now(), "Start scan the wifi, wait 10s"
         self.writeinfotolog()
-        time.sleep(11)
+        time.sleep(seconds)
         self.killshell()
         print datetime.datetime.now(), "Start insert to mongo."
         self.collectwifilist()
