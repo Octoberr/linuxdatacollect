@@ -1,5 +1,5 @@
 # coding:utf-8
-
+import threading
 from flask import Flask, request, Response
 import json
 import gevent.monkey
@@ -7,6 +7,8 @@ from gevent.pywsgi import WSGIServer
 gevent.monkey.patch_all()
 # 内部引用
 from wifilist.startwifiserver import CONTROL
+from wifilist.getwifihandshake import HANDSHAKE
+from wifilist.routeattack import ROUTE
 app = Flask(__name__)
 
 
@@ -19,6 +21,19 @@ def starttheserver():
         control.strat(seconds)
         orderinfo = {"complete": 1}
     return Response(json.dumps(orderinfo), mimetype="application/json")
+
+
+@app.route('/api/handshake', methods=['post'])
+def collecthandshake():
+    args = json.loads(request.data)
+    t1 = HANDSHAKE(args['mac'], args['ch'], args['wifi'])
+    t2 = ROUTE(args['mac'])
+    thread1 = threading.Thread(target=t1.starthandshake)
+    thread2 = threading.Thread(target=t2.strat)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    return
 
 
 if __name__ == '__main__':

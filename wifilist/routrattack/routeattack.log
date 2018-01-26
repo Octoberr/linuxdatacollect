@@ -1,0 +1,13 @@
+10:20:55  Waiting for beacon frame (BSSID: 50:2B:73:F4:35:F1) on channel 1
+NB: this attack is more effective when targeting
+a connected wireless client (-c <client's mac>).
+10:20:55  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:20:56  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:20:56  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:20:57  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:20:57  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:21:01  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:21:05  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:21:05  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:21:08  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
+10:21:12  Sending DeAuth to broadcast -- BSSID: [50:2B:73:F4:35:F1]
