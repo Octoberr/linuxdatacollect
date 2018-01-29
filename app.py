@@ -44,6 +44,7 @@ def collecthandshake():
             handshake = re_handshake.search(line)
             if handshake:
                 GET = False
+                t1.delthelog()
                 orderinfo = {"complete": 1}
                 break
             else:

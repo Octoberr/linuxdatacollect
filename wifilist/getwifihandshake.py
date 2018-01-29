@@ -47,7 +47,7 @@ class HANDSHAKE:
         subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
 
     def delthelog(self):
-        subprocess.call("rm -rf {}".format(self.hslogpath))
+        subprocess.call("rm -f {}".format(self.hslogpath), shell=True)
 
     # 接收mac，ch, wifi获取wifihandshakebao
     def starthandshake(self):
