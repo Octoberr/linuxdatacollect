@@ -29,7 +29,11 @@ class ROUTE:
         return
 
     def delthelog(self):
-        subprocess.call("rm -rf {}".format(self.routeattack))
+        cmd = 'rm -f {}'.format(self.routeattack)
+        subprocess.call(cmd, shell=True)
+
+    def killairodump(self):
+        subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
 
     def strat(self):
         count = 0
@@ -48,4 +52,5 @@ class ROUTE:
             else:
                 break
         self.delthelog()
+        self.killairodump()
         return

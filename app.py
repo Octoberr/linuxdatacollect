@@ -5,6 +5,7 @@ import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
 import time
+import re
 gevent.monkey.patch_all()
 # 内部引用
 from wifilist.startwifiserver import CONTROL
@@ -34,8 +35,22 @@ def collecthandshake():
     thread2 = threading.Thread(target=t2.strat)
     thread1.start()
     thread2.start()
-    thread1.join()
-    return
+    GET = True
+    while GET:
+        logfile = open(t1.hslogpath, "r")
+        loglines = logfile.readlines()
+        re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
+        for line in loglines:
+            handshake = re_handshake.search(line)
+            if handshake:
+                GET = False
+                orderinfo = {"complete": 1}
+                break
+            else:
+                GET = True
+                thread1.start()
+                thread2.start()
+    return Response(json.dumps(orderinfo), mimetype="application/json")
 
 
 if __name__ == '__main__':

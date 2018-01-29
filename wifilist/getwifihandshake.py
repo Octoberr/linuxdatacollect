@@ -34,14 +34,14 @@ class HANDSHAKE:
         p.wait()
         return
 
-    def follw(self, thefile):
-        thefile.seek(0, 0)  # Go to the end of the file
-        while True:
-            line = thefile.readline()
-            if not line:
-                time.sleep(0.1)
-                continue
-            yield line
+    # def follw(self, thefile):
+    #     thefile.seek(0, 0)  # Go to the end of the file
+    #     while True:
+    #         line = thefile.readline()
+    #         if not line:
+    #             time.sleep(0.1)
+    #             continue
+    #         yield line
 
     def killairodump(self):
         subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
@@ -53,15 +53,6 @@ class HANDSHAKE:
     def starthandshake(self):
         cmd = 'airodump-ng -c {} --bssid {} -w {} wlan0mon'.format(self.ch, self.mac, self.savedatapath + self.wifi)
         self.writeinfotolog(cmd)
-        logfile = open(self.hslogpath, "r")
-        loglines = self.follw(logfile)
-        re_handshake = re.compile(r'WPA handshake\:.{}'.format(self.mac))
-        for line in loglines:
-            handshake = re_handshake.search(line)
-            if handshake:
-                self.killairodump()
-                break
-        self.delthelog()
         return
 
 # if __name__ == '__main__':
