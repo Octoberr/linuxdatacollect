@@ -31,12 +31,12 @@ def collecthandshake():
     args = json.loads(request.data)
     t1 = HANDSHAKE(args['mac'], args['ch'], args['wifi'])
     t2 = ROUTE(args['mac'])
-    thread1 = threading.Thread(target=t1.starthandshake)
-    thread2 = threading.Thread(target=t2.strat)
-    thread1.start()
-    thread2.start()
     GET = True
     while GET:
+        thread1 = threading.Thread(target=t1.starthandshake)
+        thread2 = threading.Thread(target=t2.strat)
+        thread1.start()
+        thread2.start()
         logfile = open(t1.hslogpath, "r")
         loglines = logfile.readlines()
         re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
@@ -48,8 +48,6 @@ def collecthandshake():
                 break
             else:
                 GET = True
-                thread1.start()
-                thread2.start()
     return Response(json.dumps(orderinfo), mimetype="application/json")
 
 
