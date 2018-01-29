@@ -49,6 +49,9 @@ class HANDSHAKE:
     def delthelog(self):
         subprocess.call("rm -f {}".format(self.hslogpath), shell=True)
 
+    def delunusefile(self):
+        subprocess.call("rm -f /home/wifidata/*", shell=True)
+
     # 接收mac，ch, wifi获取wifihandshakebao
     def starthandshake(self):
         cmd = 'airodump-ng -c {} --bssid {} -w {} wlan0mon'.format(self.ch, self.mac, self.savedatapath + self.wifi)

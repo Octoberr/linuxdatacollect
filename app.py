@@ -31,6 +31,7 @@ def collecthandshake():
     args = json.loads(request.data)
     t1 = HANDSHAKE(args['mac'], args['ch'], args['wifi'])
     t2 = ROUTE(args['mac'])
+    re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
     GET = True
     while GET:
         thread1 = threading.Thread(target=t1.starthandshake)
@@ -39,7 +40,6 @@ def collecthandshake():
         thread2.start()
         logfile = open(t1.hslogpath, "r")
         loglines = logfile.readlines()
-        re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
         for line in loglines:
             handshake = re_handshake.search(line)
             if handshake:
@@ -48,6 +48,8 @@ def collecthandshake():
                 orderinfo = {"complete": 1}
                 break
             else:
+                t1.delunusefile()
+                time.sleep(0.5)
                 GET = True
     return Response(json.dumps(orderinfo), mimetype="application/json")
 
