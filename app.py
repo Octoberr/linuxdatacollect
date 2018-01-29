@@ -38,6 +38,8 @@ def collecthandshake():
         thread2 = threading.Thread(target=t2.strat)
         thread1.start()
         thread2.start()
+        thread1.join()
+        thread2.join()
         logfile = open(t1.hslogpath, "r")
         loglines = logfile.readlines()
         for line in loglines:
@@ -49,6 +51,7 @@ def collecthandshake():
                 break
             else:
                 t1.delunusefile()
+                t1.delthelog()
                 time.sleep(0.5)
                 GET = True
     return Response(json.dumps(orderinfo), mimetype="application/json")
