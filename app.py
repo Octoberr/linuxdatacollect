@@ -4,6 +4,7 @@ from flask import Flask, request, Response
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
+import time
 gevent.monkey.patch_all()
 # 内部引用
 from wifilist.startwifiserver import CONTROL
@@ -17,8 +18,9 @@ def starttheserver():
     args = json.loads(request.data)
     seconds = args['seconds']
     if args['start'] == 1:
-        control = CONTROL()
-        control.strat(seconds)
+        # control = CONTROL()
+        # control.strat(seconds)
+        time.sleep(seconds)
         orderinfo = {"complete": 1}
     return Response(json.dumps(orderinfo), mimetype="application/json")
 

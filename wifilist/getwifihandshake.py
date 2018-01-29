@@ -35,7 +35,7 @@ class HANDSHAKE:
         return
 
     def follw(self, thefile):
-        thefile.seek(0, 2)  # Go to the end of the file
+        thefile.seek(0, 0)  # Go to the end of the file
         while True:
             line = thefile.readline()
             if not line:

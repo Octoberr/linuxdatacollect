@@ -28,6 +28,9 @@ class ROUTE:
         p.wait()
         return
 
+    def delthelog(self):
+        subprocess.call("rm -rf {}".format(self.routeattack))
+
     def strat(self):
         count = 0
         re_route = re.compile(r'Sending DeAuth to broadcast \-\- BSSID\: \[{}\]'.format(self.mac))
@@ -44,4 +47,5 @@ class ROUTE:
                 time.sleep(1)
             else:
                 break
+        self.delthelog()
         return
