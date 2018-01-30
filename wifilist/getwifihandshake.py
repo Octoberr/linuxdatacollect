@@ -37,9 +37,6 @@ class HANDSHAKE:
         p.wait()
         return
 
-    def killairodump(self):
-        subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
-
     def delthelog(self):
         subprocess.call("rm -f {}".format(self.hslogpath), shell=True)
 

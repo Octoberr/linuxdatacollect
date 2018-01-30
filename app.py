@@ -32,7 +32,12 @@ def collecthandshake():
     t2 = ROUTE(args['mac'])
     re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
     GET = True
+    count = 0
     while GET:
+        count += 1
+        if count > 3:
+            orderinfo = {"complete": 0}
+            break
         t1.delunusefile()
         thread1 = threading.Thread(target=t1.starthandshake)
         thread2 = threading.Thread(target=t2.strat)

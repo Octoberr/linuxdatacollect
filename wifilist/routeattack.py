@@ -15,7 +15,7 @@ class ROUTE:
         # self.routeattack = os.path.join(filedir, 'routrattack', 'routeattack.log')
         self.routeattack = '/home/routeattack.log'
         self.mac = mac
-        self.limit = 100
+        self.limit = 5
 
     # 保存shell的所有输出
     def writeinfotolog(self):
