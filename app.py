@@ -48,13 +48,13 @@ def collecthandshake():
                 GET = False
                 # 获取握手包成功后删除wifilog
                 t1.delthelog()
+                t1.mvfile()
                 orderinfo = {"complete": 1}
                 break
             else:
                 t1.delunusefile()
                 time.sleep(0.1)
     # 最后保存文件
-    t1.mvfile()
     return Response(json.dumps(orderinfo), mimetype="application/json")
 
 
