@@ -70,7 +70,11 @@ class WIFINAME:
                     tmp['ESSID'] = list[-2]
                 except:
                     tmp['ESSID'] = 'error code'
-                self.insertintomongo(tmp)
+                try:
+                    self.insertintomongo(tmp)
+                except:
+                    print '特殊字符串'
+                    continue
         print datetime.datetime.now(), "Complete store the info."
         return
 
