@@ -57,6 +57,6 @@ class ROUTE:
         # 删除本地的log文件
         self.delthelog()
         # 泛洪攻击成功后停止程序
-        time.sleep(1)
+        time.sleep(2)
         self.killairodump()
         return
