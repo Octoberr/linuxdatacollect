@@ -43,7 +43,7 @@ class ROUTE:
             if count > self.limit:
                 break
             count += 1
-            # 写入文件前删除可能存在的文件
+            # 写入文件前删除可能存在的log
             self.delthelog()
             self.writeinfotolog()
             time.sleep(0.5)

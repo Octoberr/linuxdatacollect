@@ -33,6 +33,7 @@ def collecthandshake():
     re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
     GET = True
     while GET:
+        t1.delunusefile()
         thread1 = threading.Thread(target=t1.starthandshake)
         thread2 = threading.Thread(target=t2.strat)
         thread1.start()
@@ -47,13 +48,13 @@ def collecthandshake():
             if handshake:
                 GET = False
                 # 获取握手包成功后删除wifilog
-                t1.delthelog()
-                t1.mvfile()
-                orderinfo = {"complete": 1}
                 break
             else:
-                t1.delunusefile()
-                time.sleep(0.1)
+                continue
+    else:
+        t1.delthelog()
+        t1.mvfile()
+        orderinfo = {"complete": 1}
     # 最后保存文件
     return Response(json.dumps(orderinfo), mimetype="application/json")
 
