@@ -9,6 +9,7 @@ create by swm
 import re
 import pymongo
 import datetime
+import time
 from subprocess import call
 # 外部引用
 
@@ -66,6 +67,7 @@ class WIFINAME:
                 tmp['s'] = list[4]
                 tmp['CH'] = list[5]
                 tmp['MB'] = list[6]
+                tmp['unixtime'] = int(time.time())
                 try:
                     tmp['ESSID'] = list[-2]
                 except:
