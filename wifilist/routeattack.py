@@ -43,14 +43,20 @@ class ROUTE:
             if count > self.limit:
                 break
             count += 1
+            # 写入文件前删除可能存在的文件
+            self.delthelog()
             self.writeinfotolog()
             time.sleep(0.5)
             file = open(self.routeattack).read()
             router = re_route.findall(file)
+            # 泛洪攻击没有成功则停0.5s继续
             if len(router) == 0:
-                time.sleep(1)
+                time.sleep(0.5)
             else:
                 break
+        # 删除本地的log文件
         self.delthelog()
+        # 泛洪攻击成功后停止程序
+        time.sleep(1)
         self.killairodump()
         return

@@ -1,6 +1,6 @@
 # coding:utf-8
 import threading
-from flask import Flask, request, Response
+from flask import Flask, request, Response, send_from_directory, make_response
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
@@ -17,19 +17,18 @@ app = Flask(__name__)
 @app.route('/api/startcollect', methods=['post'])
 def starttheserver():
     args = json.loads(request.data)
-    seconds = args['seconds']
-    if args['start'] == 1:
-        # control = CONTROL()
-        # control.strat(seconds)
-        time.sleep(seconds)
-        orderinfo = {"complete": 1}
+    # 类型强转确保int
+    seconds = int(args['seconds'])
+    if int(args['start']) == 1:
+        control = CONTROL()
+        orderinfo =control.strat(seconds)
     return Response(json.dumps(orderinfo), mimetype="application/json")
 
 
 @app.route('/api/handshake', methods=['post'])
 def collecthandshake():
     args = json.loads(request.data)
-    t1 = HANDSHAKE(args['mac'], args['ch'], args['wifi'])
+    t1 = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
     t2 = ROUTE(args['mac'])
     re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
     GET = True
@@ -38,6 +37,7 @@ def collecthandshake():
         thread2 = threading.Thread(target=t2.strat)
         thread1.start()
         thread2.start()
+        # 等待线程执行结束
         thread1.join()
         thread2.join()
         logfile = open(t1.hslogpath, "r")
@@ -46,15 +46,26 @@ def collecthandshake():
             handshake = re_handshake.search(line)
             if handshake:
                 GET = False
+                # 获取握手包成功后删除wifilog
                 t1.delthelog()
                 orderinfo = {"complete": 1}
                 break
             else:
                 t1.delunusefile()
-                t1.delthelog()
-                time.sleep(0.5)
-                GET = True
+                time.sleep(0.1)
+    # 最后保存文件
+    t1.mvfile()
     return Response(json.dumps(orderinfo), mimetype="application/json")
+
+
+@app.route('/api/download/<wifi>', methods=['GET'])
+def download(wifi):
+    filepath = '/home/wifihandshakedata/'
+    filename = '{}-01.cap'.format(wifi)
+    # 中文
+    response = make_response(send_from_directory(directory=filepath, filename=filename, as_attachment=True))
+    response.headers["Content-Disposition"] = "attachment; filename={}".format(filename.encode().decode('latin-1'))
+    return response
 
 
 if __name__ == '__main__':

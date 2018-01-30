@@ -22,10 +22,13 @@ class HANDSHAKE:
         self.mac = mac
         self.ch = ch
         self.wifi = wifi
+        # 获得文件的路径
+        self.wifihandshake = '/home/wifidata/{}-01.cap'.format(wifi)
+        # 保存文件的路径
+        self.keepfile = '/home/wifihandshakedata/'
 
     # 保存shell的所有输出
     def writeinfotolog(self, cmd):
-        # call("python {} 2>&1 | tail -1 >{}".format(self.infopath, self.logpath), shell=True)
         fdout = open(self.hslogpath, 'a')
         fderr = open(self.hslogpath, 'a')
         p = subprocess.Popen(cmd, stdout=fdout, stderr=fderr, shell=True)
@@ -33,15 +36,6 @@ class HANDSHAKE:
             return
         p.wait()
         return
-
-    # def follw(self, thefile):
-    #     thefile.seek(0, 0)  # Go to the end of the file
-    #     while True:
-    #         line = thefile.readline()
-    #         if not line:
-    #             time.sleep(0.1)
-    #             continue
-    #         yield line
 
     def killairodump(self):
         subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
@@ -52,12 +46,15 @@ class HANDSHAKE:
     def delunusefile(self):
         subprocess.call("rm -f /home/wifidata/*", shell=True)
 
-    # 接收mac，ch, wifi获取wifihandshakebao
+    # 移动获取成功的文件
+    def mvfile(self):
+        subprocess.call("cp -frap {} {}".format(self.wifihandshake, self.keepfile), shell=True)
+
+    # 接收mac，ch, wifi获取wifihandshakebao，这个程序就只会写log知道泛洪攻击成功
     def starthandshake(self):
+        # 开启获取wifi握手包的命令，并将log写入文件，本地获得一个文件
         cmd = 'airodump-ng -c {} --bssid {} -w {} wlan0mon'.format(self.ch, self.mac, self.savedatapath + self.wifi)
+        # 在写入文件前删除可能存在的文件
+        self.delthelog()
         self.writeinfotolog(cmd)
         return
-
-# if __name__ == '__main__':
-#     hand = HANDSHAKE()
-#     hand.gethandshake('50:2B:73:F4:35:F1', 7, 'swm')

@@ -25,7 +25,7 @@ class WIFINAME:
         db = client.swmdb
         information = db.wifilist
         information.insert(wifilist)
-        print datetime.datetime.now(), 'insert terminal success'
+        print datetime.datetime.now(), 'insert wifidate success'
 
     def getwifilist(self):
         wifilist = []
@@ -45,16 +45,15 @@ class WIFINAME:
                         break
                 elif copy:
                     wifilist.append(line)
+        # 将信息采集后就可以删除log
+        call("rm -f {}".format(self.logpath), shell=True)
         return wifilist
-
-    # 结束循环后kill自己,并且删除log文件
-    def killmyself(self):
-        call("rm -rf {}".format(self.logpath), shell=True)
-        call("ps -ef|grep startwifiserver.py|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
 
     def startcollectinfo(self, wifilist):
         for line in wifilist:
+            # 空格分割
             str = line.split(' ')
+            # 去除空字符串
             list = filter(None, str)
             if len(list) <= 1:
                 continue
@@ -67,14 +66,17 @@ class WIFINAME:
                 tmp['s'] = list[4]
                 tmp['CH'] = list[5]
                 tmp['MB'] = list[6]
-                tmp['ESSID'] = list[-2]
+                try:
+                    tmp['ESSID'] = list[-2]
+                except:
+                    tmp['ESSID'] = 'error code'
                 self.insertintomongo(tmp)
         print datetime.datetime.now(), "Complete store the info."
-        self.killmyself()
+        return
 
 
-if __name__ == '__main__':
-    wifi = WIFINAME()
-    wifilist = wifi.getwifilist()
-    # print wifilist
-    wifi.startcollectinfo(wifilist)
+# if __name__ == '__main__':
+#     wifi = WIFINAME()
+#     wifilist = wifi.getwifilist()
+#     # print wifilist
+#     wifi.startcollectinfo(wifilist)
