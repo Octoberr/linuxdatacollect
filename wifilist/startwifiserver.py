@@ -25,8 +25,8 @@ class CONTROL:
         wifi = WIFINAME()
         wifilist = wifi.getwifilist()
         # print wifilist
-        wifi.startcollectinfo(wifilist)
-        return
+        info = wifi.startcollectinfo(wifilist)
+        return info
         # call("python {}".format(self.pypath), shell=True)
 
     # 保存shell的所有输出
@@ -49,13 +49,16 @@ class CONTROL:
         print datetime.datetime.now(), "Start scan the wifi, wait {}s".format(seconds)
         # 在写文件前先清除下可能存在的log
         call("rm -f {}".format(self.logpath), shell=True)
-        self.writeinfotolog()
+        try:
+            self.writeinfotolog()
+        except:
+            return {"complete": 0, "error": "Wifi failed to start properly, please check whether to open wlan"}
         # 这是非常奇怪的额，明明在写的时候不能执行下一步，但是这个确实能往后面执行
         time.sleep(seconds)
         # 结束扫描命令
         self.killshell()
         print datetime.datetime.now(), "Start insert to mongo."
-        self.collectwifilist()
-        return {"complete": 1}
+        info = self.collectwifilist()
+        return info
 
 

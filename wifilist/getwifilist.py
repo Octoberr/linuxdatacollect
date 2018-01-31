@@ -22,11 +22,19 @@ class WIFINAME:
         self.mongoport = 27017
 
     def insertintomongo(self, wifilist):
-        client = pymongo.MongoClient(self.mongohost, self.mongoport)
+        try:
+            client = pymongo.MongoClient(self.mongohost, self.mongoport)
+        except:
+            return {"complete": 0, "error": "Cant connect mongodb"}
         db = client.swmdb
         information = db.wifilist
-        information.insert(wifilist)
-        print datetime.datetime.now(), 'insert wifidate success'
+        try:
+            information.insert(wifilist)
+        except:
+            wifilist['ESSID'] = 'errorcode'
+            information.insert(wifilist)
+            print "error code, have replace"
+        return {"complete": "1"}
 
     def getwifilist(self):
         wifilist = []
@@ -68,17 +76,10 @@ class WIFINAME:
                 tmp['CH'] = list[5]
                 tmp['MB'] = list[6]
                 tmp['unixtime'] = int(time.time())
-                try:
-                    tmp['ESSID'] = list[-2]
-                except:
-                    tmp['ESSID'] = 'error code'
-                try:
-                    self.insertintomongo(tmp)
-                except:
-                    print '特殊字符串'
-                    continue
+                tmp['ESSID'] = list[-2]
+                info = self.insertintomongo(tmp)
         print datetime.datetime.now(), "Complete store the info."
-        return
+        return info
 
 
 # if __name__ == '__main__':

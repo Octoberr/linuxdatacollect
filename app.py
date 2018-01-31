@@ -21,8 +21,8 @@ def starttheserver():
     seconds = int(args['seconds'])
     if int(args['start']) == 1:
         control = CONTROL()
-        orderinfo =control.strat(seconds)
-    return Response(json.dumps(orderinfo), mimetype="application/json")
+        info =control.strat(seconds)
+    return Response(json.dumps(info), mimetype="application/json")
 
 
 @app.route('/api/handshake', methods=['post'])
@@ -36,7 +36,7 @@ def collecthandshake():
     while GET:
         count += 1
         if count > 3:
-            orderinfo = {"complete": 0}
+            orderinfo = {"complete": 0, "error": "Failed get wifi handshake"}
             break
         t1.delunusefile()
         thread1 = threading.Thread(target=t1.starthandshake)
@@ -56,6 +56,7 @@ def collecthandshake():
                 break
             else:
                 continue
+        time.sleep(0.1)
     else:
         t1.delthelog()
         t1.mvfile()
@@ -70,6 +71,9 @@ def download(wifi):
     filename = '{}-01.cap'.format(wifi)
     # 中文
     response = make_response(send_from_directory(directory=filepath, filename=filename, as_attachment=True))
+    # except:
+    #     info = {"complete": 0, "error": "No such file, scan wifi failed"}
+    #     return Response(json.dumps(info), mimetype="application/json")
     response.headers["Content-Disposition"] = "attachment; filename={}".format(filename.encode().decode('latin-1'))
     return response
 
