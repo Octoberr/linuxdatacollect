@@ -31,38 +31,40 @@ def collecthandshake():
     t1 = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
     t2 = ROUTE(args['mac'])
     re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
-    GET = True
-    count = 0
-    while GET:
-        count += 1
-        if count > 3:
-            orderinfo = {"complete": 0, "error": "Failed get wifi handshake"}
+    GET = False
+    # count = 0
+    # while GET:
+    #     count += 1
+    #     if count > 3:
+    #         orderinfo = {"complete": 0, "error": "Failed get wifi handshake"}
+    #         break
+    t1.delunusefile()
+    thread1 = threading.Thread(target=t1.starthandshake)
+    thread2 = threading.Thread(target=t2.strat)
+    thread1.start()
+    thread2.start()
+    # 等待线程执行结束
+    thread1.join()
+    thread2.join()
+    logfile = open(t1.hslogpath, "r")
+    loglines = logfile.readlines()
+    for line in loglines:
+        handshake = re_handshake.search(line)
+        if handshake:
+            GET = True
+            # 获取握手包成功后删除wifilog
             break
-        t1.delunusefile()
-        thread1 = threading.Thread(target=t1.starthandshake)
-        thread2 = threading.Thread(target=t2.strat)
-        thread1.start()
-        thread2.start()
-        # 等待线程执行结束
-        thread1.join()
-        thread2.join()
-        logfile = open(t1.hslogpath, "r")
-        loglines = logfile.readlines()
-        for line in loglines:
-            handshake = re_handshake.search(line)
-            if handshake:
-                GET = False
-                # 获取握手包成功后删除wifilog
-                break
-            else:
-                continue
-        time.sleep(0.1)
-    else:
-        t1.delthelog()
+        else:
+            continue
+    time.sleep(0.1)
+    if GET:
         t1.mvfile()
-        orderinfo = {"complete": 1}
-    # 最后保存文件
-    return Response(json.dumps(orderinfo), mimetype="application/json")
+        info = {"complete": 1}
+    else:
+        info = {"complete": 0, "error": "Failed get wifi handshake"}
+    # 最后无论如何都删除log
+    t1.delthelog()
+    return Response(json.dumps(info), mimetype="application/json")
 
 
 @app.route('/api/download/<wifi>', methods=['GET'])

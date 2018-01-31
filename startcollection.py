@@ -9,7 +9,7 @@ class T1:
         while True:
             count += 1
             print 'swm'
-            if count == 100:
+            if count == 10:
                 break
         return
 class T2:
@@ -18,17 +18,23 @@ class T2:
         while True:
             print 'nuonuo'
             count +=1
-            if count ==200:
+            if count ==20:
                 break
         return
 def start():
     t1 = T1()
     t2 = T2()
-    thread1 = threading.Thread(target=t1.thread2)
-    thread2 = threading.Thread(target=t2.thread1)
-    thread1.start()
-    thread2.start()
-    # thread2.join()
+    for i in range(0, 3):
+        print datetime.datetime.now(), i
+        thread1 = threading.Thread(target=t1.thread2)
+        thread2 = threading.Thread(target=t2.thread1)
+        thread1.setDaemon(1)
+        thread2.setDaemon(1)
+        thread1.start()
+        thread2.start()
+        thread2.join()
+        thread1.join()
+        print threading.activeCount()
     print datetime.datetime.now(), 'stop the program'
     return
 if __name__ == '__main__':
