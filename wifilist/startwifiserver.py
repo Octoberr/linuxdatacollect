@@ -38,7 +38,7 @@ class CONTROL:
         # fdout = open(self.logpath, 'a')
         # fderr = open(self.logpath, 'a')
         # 修改为不写入文件对于不是很大的字符串直接存储在内存
-        p = Popen(self.shellpath, stderr=PIPE, shell=True)
+        p = Popen(self.shellpath, stderr=PIPE, stdout=PIPE, shell=True)
         stdout, err = p.communicate()
         return err
 

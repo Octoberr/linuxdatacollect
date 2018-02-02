@@ -80,7 +80,7 @@ class WIFINAME:
                 tmp['CH'] = list[5]
                 tmp['MB'] = list[6]
                 tmp['unixtime'] = int(time.time())
-                tmp['ESSID'] = list[-2]
+                tmp['ESSID'] = list[-1]
                 self.insertintomongo(tmp)
         self.writelog("{} Complete store the info.".format(datetime.datetime.now()))
         return

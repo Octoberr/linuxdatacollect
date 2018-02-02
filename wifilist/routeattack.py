@@ -15,12 +15,12 @@ class ROUTE:
         # self.routeattack = os.path.join(filedir, 'routrattack', 'routeattack.log')
         self.logpath = "/home/execute.log"
         self.mac = mac
-        self.limit = 20
+        self.limit = 10
 
     # 保存shell的所有输出
     def writeinfotolog(self):
         cmd = 'aireplay-ng --deauth 10 -a {} wlan0mon'.format(self.mac)
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, err = p.communicate()
         return output
 

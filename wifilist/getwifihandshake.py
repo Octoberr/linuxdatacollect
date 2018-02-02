@@ -31,7 +31,7 @@ class HANDSHAKE:
 
     # 保存shell的所有输出
     def writeinfotolog(self, cmd):
-        p = subprocess.Popen(cmd, stderr=subprocess.PIPE, shell=True)
+        p = subprocess.Popen(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
         output, err = p.communicate()
         return err
 

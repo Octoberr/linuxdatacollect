@@ -37,10 +37,10 @@ def collecthandshake():
     args = json.loads(request.data)
     handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
     router = ROUTE(args['mac'])
-    t1 = threading.Thread(target=router.strat)
-    t2 = threading.Thread(target=handshake.starthandshake)
-    t2.start()
+    t1 = threading.Thread(target=handshake.starthandshake)
+    t2 = threading.Thread(target=router.strat)
     t1.start()
+    t2.start()
     t2.join()
     t1.join()
     from terminal.allconfig import conf
