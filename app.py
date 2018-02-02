@@ -4,8 +4,7 @@ from flask import Flask, request, Response, send_from_directory, make_response
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
-import time
-import re
+import redis
 gevent.monkey.patch_all()
 # 内部引用
 from wifilist.startwifiserver import CONTROL
@@ -20,50 +19,39 @@ def starttheserver():
     # 类型强转确保int
     seconds = int(args['seconds'])
     if int(args['start']) == 1:
-        control = CONTROL()
-        info =control.strat(seconds)
+        control = CONTROL(seconds)
+        thread1 = threading.Thread(target=control.strat)
+        thread2 = threading.Thread(target=control.killshell)
+        thread1.start()
+        thread2.start()
+        thread1.join()
+        thread2.join()
+        info = {"complete": 1}
+    else:
+        info = {"complete": 0, "error": "something wrong with you!"}
     return Response(json.dumps(info), mimetype="application/json")
 
 
 @app.route('/api/handshake', methods=['post'])
 def collecthandshake():
     args = json.loads(request.data)
-    t1 = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
-    t2 = ROUTE(args['mac'])
-    re_handshake = re.compile(r'WPA handshake\:.{}'.format(args['mac']))
-    GET = False
-    # count = 0
-    # while GET:
-    #     count += 1
-    #     if count > 3:
-    #         orderinfo = {"complete": 0, "error": "Failed get wifi handshake"}
-    #         break
-    t1.delunusefile()
-    thread1 = threading.Thread(target=t1.starthandshake)
-    thread2 = threading.Thread(target=t2.strat)
-    thread1.start()
-    thread2.start()
-    # 等待线程执行结束
-    thread1.join()
-    thread2.join()
-    logfile = open(t1.hslogpath, "r")
-    loglines = logfile.readlines()
-    for line in loglines:
-        handshake = re_handshake.search(line)
-        if handshake:
-            GET = True
-            # 获取握手包成功后删除wifilog
-            break
-        else:
-            continue
-    time.sleep(0.1)
-    if GET:
-        t1.mvfile()
+    handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
+    router = ROUTE(args['mac'])
+    t1 = threading.Thread(target=router.strat)
+    t2 = threading.Thread(target=handshake.starthandshake)
+    t2.start()
+    t1.start()
+    t2.join()
+    t1.join()
+    from terminal.allconfig import conf
+    r = redis.Redis(host=conf['redishost'], port=conf['redisport'])
+    get = r.hget("handshake", "GET")
+    if get:
+        handshake.mvfile()
         info = {"complete": 1}
     else:
         info = {"complete": 0, "error": "Failed get wifi handshake"}
-    # 最后无论如何都删除log
-    t1.delthelog()
+    r.delete("handshake")
     return Response(json.dumps(info), mimetype="application/json")
 
 

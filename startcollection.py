@@ -11,7 +11,7 @@ class T1:
             print 'swm'
             if count == 10:
                 break
-        return
+        return 'hello'
 class T2:
     def thread1(self):
         count = 0
@@ -20,20 +20,22 @@ class T2:
             count +=1
             if count ==20:
                 break
-        return
+        return 'swm'
 def start():
     t1 = T1()
     t2 = T2()
     for i in range(0, 3):
         print datetime.datetime.now(), i
-        thread1 = threading.Thread(target=t1.thread2)
+        thread1 = threading.ThreadW(target=t1.thread2)
         thread2 = threading.Thread(target=t2.thread1)
         thread1.setDaemon(1)
         thread2.setDaemon(1)
-        thread1.start()
-        thread2.start()
+        a = thread1.start()
+        b = thread2.start()
         thread2.join()
         thread1.join()
+        print a
+        print b
         print threading.activeCount()
     print datetime.datetime.now(), 'stop the program'
     return

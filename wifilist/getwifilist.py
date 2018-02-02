@@ -17,7 +17,7 @@ from subprocess import call
 class WIFINAME:
 
     def __init__(self):
-        self.logpath = "/home/wifi.log"
+        self.logpath = "/home/execute.log"
         self.mongohost = "192.168.1.213"
         self.mongoport = 27017
 
@@ -25,7 +25,7 @@ class WIFINAME:
         try:
             client = pymongo.MongoClient(self.mongohost, self.mongoport)
         except:
-            return {"complete": 0, "error": "Cant connect mongodb"}
+            self.writelog('{} canot connect mongodb'.format(datetime.datetime.now()))
         db = client.swmdb
         information = db.wifilist
         try:
@@ -33,29 +33,33 @@ class WIFINAME:
         except:
             wifilist['ESSID'] = 'errorcode'
             information.insert(wifilist)
-            print "error code, have replace"
-        return {"complete": "1"}
+            self.writelog("{} error code, have replace".format(datetime.datetime.now()))
+        return
 
-    def getwifilist(self):
+    def writelog(self, log):
+        with open(self.logpath, "a") as file:
+            file.write(log)
+        file.close()
+
+    def getwifilist(self, text):
         wifilist = []
         re_start = re.compile(r'BSSID\s+STATION\s+PWR\s+Rate\s+Lost\s+Frames\s+Probe')
         re_end = re.compile(r'BSSID\s+PWR\s+Beacons\s+\#Data\, \#\/s\s+CH\s+MB\s+ENC\s+CIPHER AUTH ESSID')
         copy = False
-        with open(self.logpath, 'r') as file:
-            for line in reversed(file.readlines()):
-                start = re_start.search(line)
-                end = re_end.search(line)
-                if start:
-                    copy = True
-                    continue
-                elif end:
-                    copy = False
-                    if len(wifilist) > 0:
-                        break
-                elif copy:
-                    wifilist.append(line)
-        # 将信息采集后就可以删除log
-        call("rm -f {}".format(self.logpath), shell=True)
+        for line in reversed(text.splitlines()):
+            start = re_start.search(line)
+            end = re_end.search(line)
+            if start:
+                copy = True
+                continue
+            elif end:
+                copy = False
+                if len(wifilist) > 0:
+                    break
+            elif copy:
+                wifilist.append(line)
+        # 将信息采集后就可以删除log,不在需要log
+        # call("rm -f {}".format(self.logpath), shell=True)
         return wifilist
 
     def startcollectinfo(self, wifilist):
@@ -77,9 +81,9 @@ class WIFINAME:
                 tmp['MB'] = list[6]
                 tmp['unixtime'] = int(time.time())
                 tmp['ESSID'] = list[-2]
-                info = self.insertintomongo(tmp)
-        print datetime.datetime.now(), "Complete store the info."
-        return info
+                self.insertintomongo(tmp)
+        self.writelog("{} Complete store the info.".format(datetime.datetime.now()))
+        return
 
 
 # if __name__ == '__main__':

