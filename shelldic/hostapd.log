@@ -1,0 +1,142 @@
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr 4e:dc:65:16:85:e5 and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000000
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+WPA: wpa_sm_step() called recursively
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: deauthenticated due to local deauth request
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000001
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+WPA: wpa_sm_step() called recursively
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: deauthenticated due to local deauth request
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000002
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000003
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000004
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000005
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000006
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000007
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000008
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000009
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000A
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000B
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000C
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000D
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000E
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-0000000F
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000010
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000011
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000012
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000013
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000014
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: authenticated
+wlan0: STA 08:23:b2:a9:11:79 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 08:23:b2:a9:11:79
+wlan0: STA 08:23:b2:a9:11:79 RADIUS: starting accounting session 5A66AAA3-00000015
+wlan0: STA 08:23:b2:a9:11:79 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 08:23:b2:a9:11:79
+wlan0: INTERFACE-DISABLED 

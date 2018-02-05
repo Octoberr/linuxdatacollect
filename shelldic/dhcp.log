@@ -1,0 +1,37 @@
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 16 leases to leases file.
+Listening on LPF/wlan0/4e:dc:65:16:85:e5/10.0.0.0/24
+Sending on   LPF/wlan0/4e:dc:65:16:85:e5/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from 08:23:b2:a9:11:79 via wlan0
+DHCPOFFER on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 533 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPDISCOVER from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPOFFER on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 534 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 534 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 1129 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPDISCOVER from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPOFFER on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 1130 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+reuse_lease: lease age 1130 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.46
+DHCPREQUEST for 10.0.0.46 (10.0.0.1) from 08:23:b2:a9:11:79 (vivo-Y67) via wlan0
+DHCPACK on 10.0.0.46 to 08:23:b2:a9:11:79 (vivo-Y67) via wlan0

