@@ -15,7 +15,7 @@ class ROUTE:
         # self.routeattack = os.path.join(filedir, 'routrattack', 'routeattack.log')
         self.logpath = "/home/execute.log"
         self.mac = mac
-        self.limit = 10
+        self.limit = 5
 
     # 保存shell的所有输出
     def writeinfotolog(self):
@@ -36,15 +36,15 @@ class ROUTE:
             if count > self.limit:
                 break
             count += 1
-            # 写入文件前删除可能存在的log
             strtext = self.writeinfotolog()
             router = re_route.findall(strtext)
             # 泛洪攻击没有成功则停0.5s继续
             if len(router) == 0:
-                time.sleep(0.1)
+                time.sleep(0.2)
             else:
                 # 泛洪攻击成功后停止程序
                 time.sleep(2)
                 break
+        print "done", count
         self.killairodump()
         return

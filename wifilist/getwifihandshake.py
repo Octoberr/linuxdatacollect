@@ -59,5 +59,6 @@ class HANDSHAKE:
             else:
                 GET = False
                 continue
+        print "get status", GET
         self.r.hset("handshake", "GET", GET)
         return
