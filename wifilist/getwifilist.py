@@ -46,6 +46,7 @@ class WIFINAME:
         re_start = re.compile(r'BSSID\s+STATION\s+PWR\s+Rate\s+Lost\s+Frames\s+Probe')
         re_end = re.compile(r'BSSID\s+PWR\s+Beacons\s+\#Data\, \#\/s\s+CH\s+MB\s+ENC\s+CIPHER AUTH ESSID')
         copy = False
+        # 倒着读字符串，找到符合条件的行加入列表然后再筛选
         for line in reversed(text.splitlines()):
             start = re_start.search(line)
             end = re_end.search(line)

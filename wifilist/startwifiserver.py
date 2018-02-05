@@ -54,7 +54,7 @@ class CONTROL:
         file.close()
 
     # 程序运行入口
-    def strat(self):
+    def start(self):
         self.writelog("{} Start scan the wifi, wait {}s".format(datetime.datetime.now(), self.seconds))
         # 在写文件前先清除下可能存在的log
         # call("rm -f {}".format(self.logpath), shell=True)

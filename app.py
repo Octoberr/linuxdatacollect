@@ -20,7 +20,7 @@ def starttheserver():
     seconds = int(args['seconds'])
     if int(args['start']) == 1:
         control = CONTROL(seconds)
-        thread1 = threading.Thread(target=control.strat)
+        thread1 = threading.Thread(target=control.start)
         thread2 = threading.Thread(target=control.killshell)
         thread1.start()
         thread2.start()
@@ -38,7 +38,7 @@ def collecthandshake():
     handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
     router = ROUTE(args['mac'])
     t1 = threading.Thread(target=handshake.starthandshake)
-    t2 = threading.Thread(target=router.strat)
+    t2 = threading.Thread(target=router.start)
     t1.start()
     t2.start()
     t2.join()

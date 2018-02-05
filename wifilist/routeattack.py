@@ -26,8 +26,9 @@ class ROUTE:
 
     def killairodump(self):
         subprocess.call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
+        return
 
-    def strat(self):
+    def start(self):
         count = 0
         re_route = re.compile(r'Sending DeAuth to broadcast \-\- BSSID\: \[{}\]'.format(self.mac))
         while True:
