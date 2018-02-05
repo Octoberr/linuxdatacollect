@@ -53,12 +53,11 @@ class HANDSHAKE:
         for line in strdata.splitlines():
             handshake = re_handshake.search(line)
             if handshake:
-                GET = True
+                GET = 1
                 # 获取握手包成功后删除wifilog
                 break
             else:
-                GET = False
+                GET = 0
                 continue
-        print "get status", GET
         self.r.hset("handshake", "GET", GET)
         return

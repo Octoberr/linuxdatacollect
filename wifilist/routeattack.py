@@ -45,6 +45,5 @@ class ROUTE:
                 # 泛洪攻击成功后停止程序
                 time.sleep(2)
                 break
-        print "done", count
         self.killairodump()
         return

@@ -46,7 +46,7 @@ def collecthandshake():
     from terminal.allconfig import conf
     r = redis.Redis(host=conf['redishost'], port=conf['redisport'])
     get = r.hget("handshake", "GET")
-    if get:
+    if int(get) == 1:
         handshake.mvfile()
         info = {"complete": 1}
     else:
