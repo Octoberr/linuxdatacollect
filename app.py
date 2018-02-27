@@ -1,6 +1,6 @@
 # coding:utf-8
 import threading
-from flask import Flask, request, Response, send_from_directory, make_response
+from flask import Flask, request, Response, send_from_directory, make_response, render_template
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
@@ -11,6 +11,16 @@ from wifilist.startwifiserver import CONTROL
 from wifilist.getwifihandshake import HANDSHAKE
 from wifilist.routeattack import ROUTE
 app = Flask(__name__)
+
+
+@app.route('/')
+def root():
+    return render_template('index.html')
+
+
+@app.route('/dataAnalyse.html')
+def analyse():
+    return render_template('dataAnalyse.html')
 
 
 @app.route('/api/startcollect', methods=['post'])

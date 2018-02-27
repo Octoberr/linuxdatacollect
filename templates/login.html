@@ -1,0 +1,159 @@
+
+<!-- saved from url=(0021)http://192.168.106.1/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>TL-WDR6300</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="wed, 26 Feb 1997 08:21:57 GMT">
+<script language="javascript" type="text/javascript"><!--
+//--></script>
+<script language="javascript" type="text/javascript">
+var httpAutErrorArray = new Array(
+0, 0,0 );
+</script>
+
+<style type="text/css">
+body{
+	font-family:"ËÎÌå";
+	background-color:white;
+	margin:0px;
+	padding:0px;
+}
+div.loginBox
+{
+	display: block;
+	position:relative;
+	margin-top:10%;	
+	text-align:center;
+}
+
+div.panelThre{
+	margin-top:10px;
+}
+div.picDiv{
+	width:457px;
+	height:321px;
+	background:url(images/loginbg.png);
+	position:relative;
+}
+input.pcPassword{
+	width:300px;
+	height:50px;
+	line-height:50px; 
+}
+
+.topLogo{
+	background:url(images/top_bg.png);
+	height:55px;
+}
+
+ul{
+	padding:40px 0px 0px 0px;
+	margin:0px;
+	list-style:none;
+}
+ul li{
+	width:341px;
+	text-align:left;
+	color:#656565;
+	font-family:"ËÎÌå";
+	font-weight:normal;
+	font-size:12pt;
+	margin-top:10px;
+	display:inline-block;
+	_display:inline;
+	_zoom:1;	
+}
+
+.errMsg
+{
+	color:#fd1515;
+}
+li.pwLi{	
+	height:40px;
+	background:url(images/loginPwd.png);
+}
+
+input.text{
+	border:0px;
+	height:36px;
+	line-height:normal;	
+	width:337px;
+	padding:10px 0px;
+	margin:2px 0px 0px 2px;
+	font-size:14px;
+	color:#6a6969;
+	font-family:"ËÎÌå";
+	font-weight:normal;
+	background-color:transparent;
+	vertical-align:middle;
+}
+label.loginBtn{
+	height:40px;
+	display:inline-block;
+	width:148px;
+	margin-top:20px;
+	background:url(images/loginBtn.png);
+	cursor:pointer;	
+	vertical-align:middle;
+	text-align: center;
+	color:white;
+	font-family:"ËÎÌå";
+	font-weight:normal;
+	font-size:14pt;
+	line-height:40px;
+}
+</style>
+<script src="./bower_components/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+
+function check_login()
+{
+	var password = $("#pcPassword").val();
+	if( password =='')
+	{
+		alert('用户名不能为空');
+		return false;
+	}
+	    $.ajax({
+            type: "POST",
+            url: "login.php",
+            data: "password="+password,
+            success: function (data) {
+               if(data.indexOf("´íÎó")>-1)
+			   {
+				alert(data);
+				
+				}else{
+				window.location= "index.php";
+				}
+				
+            },
+            error: function (msg) {
+            }
+        });
+}
+</script>
+</head>
+<body>
+
+	<div class="topLogo">
+		<a href="http://www.tp-link.com.cn/" target="blank"><img src="images/top1_1.png" border="0" style="cursor:pointer"></a>
+	</div>
+	<div class="loginBox">	
+		<div class="panelThre" align="center">
+			<div align="center" class="picDiv">
+				<ul>
+					<li style="font-size:14pt">ÇëÊäÈë¹ÜÀíÔ±ÃÜÂë</li>
+					<li id="pwLi" class="pwLi" style="background: url(images/loginPwd.png) no-repeat;"><input class="text" id="pcPassword" name="pcPassword" type="password" maxlength="15" /></li>
+					<li><label id="errMsg" class="errMsg" value="test" style="visibility:hidden">ÃÜÂë´íÎóÒÑ´ï10´Î£¬ÇëÁ½Ð¡Ê±ºóÔÙ³¢ÊÔ¡£</label></li>
+					<li><u onclick="showResetMsg();" style="cursor:pointer">Íü¼ÇÃÜÂë£¿</u></li>
+					<li><label id="resetMsg" style="visibility:hidden">ÈçÍü¼ÇÃÜÂë£¬Çë»Ö¸´³ö³§ÉèÖÃ£¬»Ö¸´·½·¨£ºÔÚÉè±¸Í¨µçÇé¿öÏÂ£¬°´×¡Reset°´Å¥±£³Ö5ÃëÒÔÉÏ¡£</label></li>
+				</ul>
+				<label id="loginBtn" class="loginBtn" onclick="check_login()">È·ÈÏ</label>
+				 
+			</div>
+		</div>
+	</div>
+
+</body></html>
