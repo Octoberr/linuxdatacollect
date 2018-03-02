@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The scan result</title>
+</head>
+<body>
+<p id="scan wifi">Scan wifi</p>
+<p id="success"></p>
+<script type="text/javascript">
+    function startscan() {
+        var xhr = new XMLHttpRequest();
+        var url = "http://192.168.1.213:8014/api/startcollect";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        var data = JSON.stringify({"start": 1, "seconds": 10});
+        xhr.send(data);
+    }
+</script>
+<button type="button" onclick="startscan()">开始扫描</button>
+
+</body>
+</html>
