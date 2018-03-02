@@ -18,11 +18,16 @@ def getquerydate():
     db = client.swmdb
     collection = db.wifilist
     # cursor = collection.find({"unixtime": {"$gt": int(today)}}, {"_id": 0}).sort({"unixtime": -1})
-    cursor = collection.find({"unixtime": {"$lte": int(today)}}, {"_id": 0}).sort([("unixtime", -1)])
+    # cursor = collection.find({"unixtime": {"$lte": int(today)}}, {"_id": 0}).sort([("unixtime", -1)])
+    cursor = collection.findall().sort([("unixtime", -1)])
+    count = 0
     for el in cursor:
         havedate = datetime.datetime.fromtimestamp(int(el['unixtime'])).strftime('%Y-%m-%d %H:%M:%S')
         el['unixtime'] = havedate
         res.append(el)
+        count += 1
+        if count > 100:
+            break
     jsondata = json.dumps(res)
     return jsondata
 
