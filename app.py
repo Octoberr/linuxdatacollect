@@ -29,13 +29,13 @@ def starttheserver():
     # 类型强转确保int
     seconds = int(args['seconds'])
     if int(args['start']) == 1:
-        control = CONTROL(seconds)
-        thread1 = threading.Thread(target=control.start)
-        thread2 = threading.Thread(target=control.killshell)
-        thread1.start()
-        thread2.start()
-        thread1.join()
-        thread2.join()
+        # control = CONTROL(seconds)
+        # thread1 = threading.Thread(target=control.start)
+        # thread2 = threading.Thread(target=control.killshell)
+        # thread1.start()
+        # thread2.start()
+        # thread1.join()
+        # thread2.join()
         info = {"complete": 1}
     else:
         info = {"complete": 0, "error": "something wrong with you!"}
