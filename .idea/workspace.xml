@@ -2,102 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f0713d1-5b53-4eb2-9b97-22a8102e53cb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/DtGrid/css.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DtGrid/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DtGrid/jquery.dtGrid.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DtGrid/jquery.dtGrid.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/DtGrid/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/css.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/jquery.dtGrid.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont93e3.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont93e3.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont93e3.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont93e3.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont93e3.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.dtGrid.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/extend/layer.ext.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/demo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/layDate官网.url" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/laydate.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/need/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/dahong/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/dahong/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/default/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/default/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/molv/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/laydate/skins/molv/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate-v1.1/更新日志.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/laydate.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/need/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/dahong/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/dahong/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/default/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/default/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/molv/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/laydate/skins/molv/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layer.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/easemob.im-1.1.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/easemob.im-1.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/easemob.im-1.1.shim.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/easemob.im-1.1.shim.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_15.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_16.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_17.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_19.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_20.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_21.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_22.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_23.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_24.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_25.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_26.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_27.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_28.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_29.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_31.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_32.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_33.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_34.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_35.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/faces/ee_9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/layim.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/layim.easemob.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/layim.easemob.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/layim.easemob.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/layim.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/loading.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/strophe.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/layim/strophe.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/default/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/default/loading-1.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/default/loading-2.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/layer.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/layer.ext.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/moon/default.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/layer/skin/moon/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/zh-cn.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-cerulean.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap-cerulean.min.css" />
-      <change beforePath="$PROJECT_DIR$/templates/dataAnalyse.html" afterPath="$PROJECT_DIR$/templates/dataAnalyse.html" />
+      <change beforePath="$PROJECT_DIR$/wifilist/mongoquery.py" afterPath="$PROJECT_DIR$/wifilist/mongoquery.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="378">
+              <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -160,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongoquery.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mongoquery.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wifilist/mongoquery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="498">
+              <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
               <folding>
                 <element signature="e#66#80#0" expanded="true" />
               </folding>
@@ -209,10 +114,10 @@
         <option value="$PROJECT_DIR$/pubfunc/selectmingidata.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/swmfile.html" />
-        <option value="$PROJECT_DIR$/wifilist/mongoquery.py" />
         <option value="$PROJECT_DIR$/locapp.py" />
         <option value="$PROJECT_DIR$/templates/dataAnalyse.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/wifilist/mongoquery.py" />
       </list>
     </option>
   </component>
@@ -222,7 +127,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="502" />
     <option name="y" value="2" />
     <option name="width" value="1933" />
@@ -435,7 +340,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="502" y="2" width="1933" height="1034" extended-state="0" />
+    <frame x="502" y="2" width="1933" height="1034" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -444,7 +349,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39576367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10766308" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10731447" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14682327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -835,21 +740,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wifilist/mongoquery.py">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#66#80#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="378">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/wifilist/mongoquery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="498">
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding>
+            <element signature="e#66#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
