@@ -11,6 +11,12 @@ app = Flask(__name__)
 from terminal.mongooptions import mobidata
 
 
+@app.route('api/allwlan', methods=['get'])
+def getallwlan():
+    info = {"wlan": ['wlan0', 'wlan1', 'wlan2']}
+    return Response(json.dumps(info), mimetype="application/json")
+
+
 @app.route('/api/whichwlan', methods=['post'])
 def wlanname():
     args = json.loads(request.data)
