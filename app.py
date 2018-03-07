@@ -10,24 +10,24 @@ gevent.monkey.patch_all()
 from wifilist.startwifiserver import CONTROL
 from wifilist.getwifihandshake import HANDSHAKE
 from wifilist.routeattack import ROUTE
-from wifilist.mongoquery import getquerydate
+# from wifilist.mongoquery import getquerydate
 app = Flask(__name__)
 
 
-@app.route('/')
-def root():
-    return render_template('index.html')
+# @app.route('/')
+# def root():
+#     return render_template('index.html')
 
 
-@app.route('/<string:page_name>/')
-def analyse(page_name):
-    return render_template(page_name)
+# @app.route('/<string:page_name>/')
+# def analyse(page_name):
+#     return render_template(page_name)
 
 
-@app.route('/api/mongodata', methods=['get'])
-def sendmongodata():
-    responsedata = getquerydate()
-    return Response(responsedata, mimetype="application/json")
+# @app.route('/api/mongodata', methods=['get'])
+# def sendmongodata():
+#     responsedata = getquerydate()
+#     return Response(responsedata, mimetype="application/json")
 
 
 @app.route('/api/startcollect', methods=['post'])
@@ -36,13 +36,13 @@ def starttheserver():
     # 类型强转确保int
     seconds = int(args['seconds'])
     if int(args['start']) == 1:
-        control = CONTROL(seconds)
-        thread1 = threading.Thread(target=control.start)
-        thread2 = threading.Thread(target=control.killshell)
-        thread1.start()
-        thread2.start()
-        thread1.join()
-        thread2.join()
+        # control = CONTROL(seconds)
+        # thread1 = threading.Thread(target=control.start)
+        # thread2 = threading.Thread(target=control.killshell)
+        # thread1.start()
+        # thread2.start()
+        # thread1.join()
+        # thread2.join()
         info = {"complete": 1}
     else:
         info = {"complete": 0, "error": "something wrong with you!"}
@@ -51,24 +51,25 @@ def starttheserver():
 
 @app.route('/api/handshake', methods=['post'])
 def collecthandshake():
-    args = json.loads(request.data)
-    handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
-    router = ROUTE(args['mac'])
-    t1 = threading.Thread(target=handshake.starthandshake)
-    t2 = threading.Thread(target=router.start)
-    t1.start()
-    t2.start()
-    t2.join()
-    t1.join()
-    from terminal.allconfig import conf
-    r = redis.Redis(host=conf['redishost'], port=conf['redisport'])
-    get = r.hget("handshake", "GET")
-    if int(get) == 1:
-        handshake.mvfile()
-        info = {"complete": 1}
-    else:
-        info = {"complete": 0, "error": "Failed get wifi handshake"}
-    r.delete("handshake")
+    # args = json.loads(request.data)
+    # handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
+    # router = ROUTE(args['mac'])
+    # t1 = threading.Thread(target=handshake.starthandshake)
+    # t2 = threading.Thread(target=router.start)
+    # t1.start()
+    # t2.start()
+    # t2.join()
+    # t1.join()
+    # from terminal.allconfig import conf
+    # r = redis.Redis(host=conf['redishost'], port=conf['redisport'])
+    # get = r.hget("handshake", "GET")
+    # if int(get) == 1:
+    #     handshake.mvfile()
+    #     info = {"complete": 1}
+    # else:
+    #     info = {"complete": 0, "error": "Failed get wifi handshake"}
+    # r.delete("handshake")\
+    info = {"complete": 1}
     return Response(json.dumps(info), mimetype="application/json")
 
 

@@ -31,4 +31,6 @@ def getquerydate():
     jsondata = json.dumps(res)
     return jsondata
 
+# if __name__ == '__main__':
+#     print getquerydate()
 

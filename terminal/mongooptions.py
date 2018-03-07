@@ -27,3 +27,19 @@ def insertmoibiinfo(mobi):
     print datetime.datetime.now(), 'insert mobi success'
 
 
+# 查询手机信息
+def mobidata():
+    res = []
+    client = pymongo.MongoClient(host=conf['mongohost'], port=conf['mongoport'])
+    db = client.swmdb
+    mobi = db.mobi
+    cursor = mobi.find({}, {"_id": 0})
+    for el in cursor:
+        online = datetime.datetime.fromtimestamp(int(el['onlinetime'])).strftime('%Y-%m-%d %H:%M:%S')
+        offline = datetime.datetime.fromtimestamp(int(el['offlinetime'])).strftime('%Y-%m-%d %H:%M:%S')
+        el['onlinetime'] = online
+        el['offlinetime'] = offline
+        res.append(el)
+    return res
+
+

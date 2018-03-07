@@ -1,8 +1,8 @@
 # coding:utf-8
 conf ={}
-conf['mongohost'] = "192.168.1.213"
+conf['mongohost'] = "192.168.1.138"
 conf['mongoport'] = 27017
-conf['redishost'] = "192.168.1.213"
+conf['redishost'] = "192.168.1.138"
 conf['redisport'] = 6379
 conf['hostapdlog'] = "/home/hostapd.log"
 conf['dhcplog'] = "/home/dhcp.log"
