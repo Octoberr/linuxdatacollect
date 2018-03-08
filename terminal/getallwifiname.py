@@ -24,7 +24,7 @@ class IWWIFI:
         wlanname = re_wlanname.findall(out)
         return wlanname
 
-    def hostapdconf(self, wlanname):
+    def changehostapdconf(self, wlanname):
         oldf = open(self.hostapdconf, 'r')
         oldsrc = oldf.read()
         re_wlanname = re.compile(r'wlan\d')
@@ -35,7 +35,7 @@ class IWWIFI:
         wopen.close()
         return
 
-    def dhcpconf(self, wlanname):
+    def changedhcpconf(self, wlanname):
         oldf = open(self.dhcpsh, 'r')
         oldsrc = oldf.read()
         re_wlanname = re.compile(r'wlan\d')
@@ -47,6 +47,6 @@ class IWWIFI:
         return
 
     def rename(self, wlanname):
-        self.hostapdconf(wlanname)
-        self.dhcpconf(wlanname)
+        self.changedhcpconf(wlanname)
+        self.changedhcpconf(wlanname)
         return
