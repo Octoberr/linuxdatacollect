@@ -47,6 +47,6 @@ class IWWIFI:
         return
 
     def rename(self, wlanname):
-        self.changedhcpconf(wlanname)
+        self.changehostapdconf(wlanname)
         self.changedhcpconf(wlanname)
         return
