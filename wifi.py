@@ -7,13 +7,22 @@ gevent.monkey.patch_all()
 
 app = Flask(__name__)
 
-# from terminal.switch import WEBSWITCH
+from terminal.switch import WEBSWITCH
 from terminal.mongooptions import mobidata
+from terminal.getallwifiname import IWWIFI
 
 
 @app.route('/api/allwlan', methods=['get'])
 def getallwlan():
-    info = {"wlan": ['wlan0', 'wlan1', 'wlan2']}
+    iw = IWWIFI()
+    info = {}
+    wlanlist = iw.getallname()
+    if len(wlanlist) == 0:
+        info['wlan'] = wlanlist
+        info['err'] = 'no wlan find, please check the mechine'
+    else:
+        info['wlan'] = wlanlist
+    # info = {"wlan": ['wlan0', 'wlan1', 'wlan2']}
     return Response(json.dumps(info), mimetype="application/json")
 
 
@@ -22,6 +31,8 @@ def wlanname():
     args = json.loads(request.data)
     wlan = args['wlanname']
     # 改变wlan名字
+    iw = IWWIFI()
+    iw.rename(wlan)
     info = {"changed": 1}
     return Response(json.dumps(info), mimetype="application/json")
 
@@ -33,8 +44,8 @@ def start():
     if int(startcode) == 1:
         # 调用开始函数
         # print 'start the mobi info collection'
-        # switch = WEBSWITCH()
-        # switch.startallshell()
+        switch = WEBSWITCH()
+        switch.startallshell()
         info = {"started": 1}
     else:
         info = {"started": 0, "erro": "something wrong with the data."}
@@ -48,8 +59,8 @@ def stop():
     if int(stopcode) == 1:
         # 调用停止函数
         # print "stop the mobi info collection"
-        # switch = WEBSWITCH()
-        # switch.shutdowntheshell()
+        switch = WEBSWITCH()
+        switch.shutdowntheshell()
         info = {"stopcode": 1}
     else:
         info = {"stopcode": 0, "erro": "something wrong with the data."}
@@ -65,7 +76,7 @@ def querymobidata():
 if __name__ == '__main__':
     http_server = WSGIServer(('0.0.0.0', 8015), app)
     try:
-        print("Start at"+ http_server.server_host + ':' + str(http_server.server_port))
+        print("Start at" + http_server.server_host + ':' + str(http_server.server_port))
         http_server.serve_forever()
     except(KeyboardInterrupt):
         print('Exit......')
