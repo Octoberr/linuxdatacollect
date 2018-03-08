@@ -3,6 +3,8 @@ from flask import Flask, request, Response
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
+import threading
+from time import sleep
 gevent.monkey.patch_all()
 
 app = Flask(__name__)
@@ -10,6 +12,7 @@ app = Flask(__name__)
 from terminal.switch import WEBSWITCH
 from terminal.mongooptions import mobidata
 from terminal.getallwifiname import IWWIFI
+from terminal.gethostapdfield import HOSTAPD
 
 
 @app.route('/api/allwlan', methods=['get'])
@@ -45,7 +48,27 @@ def start():
         # 调用开始函数
         # print 'start the mobi info collection'
         switch = WEBSWITCH()
-        switch.startallshell()
+        thread1 = threading.Thread(target=switch.starthostadp)
+        # self.starthostadp()
+        # sleep(1)
+        thread2 = threading.Thread(target=switch.startdhcp)
+        # self.startdhcp()
+        # sleep(1)
+        thread3 = threading.Thread(target=switch.startrouter)
+        # self.startrouter()
+        mobi = HOSTAPD()
+        thread4 = threading.Thread(target=mobi.startcollect)
+        # mobi.startcollect()
+        thread1.start()
+        sleep(1)
+        thread2.start()
+        sleep(1)
+        thread3.start()
+        thread4.start()
+        thread1.join()
+        thread2.join()
+        thread3.join()
+        thread4.join()
         info = {"started": 1}
     else:
         info = {"started": 0, "erro": "something wrong with the data."}

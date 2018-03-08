@@ -10,7 +10,7 @@ from time import sleep
 import threading
 
 from terminal.allconfig import conf
-from terminal.gethostapdfield import HOSTAPD
+
 
 
 class WEBSWITCH:
@@ -45,30 +45,30 @@ class WEBSWITCH:
         p = Popen(self.routershell, shell=True)
         return
 
-    def startallshell(self):
-        # 开启与WiFi热点相关的所有数据
-        thread1 = threading.Thread(target=self.starthostadp)
-        # self.starthostadp()
-        # sleep(1)
-        thread2 = threading.Thread(target=self.startdhcp)
-        # self.startdhcp()
-        # sleep(1)
-        thread3 = threading.Thread(target=self.startrouter)
-        # self.startrouter()
-        mobi = HOSTAPD()
-        thread4 = threading.Thread(target=mobi.startcollect)
-        # mobi.startcollect()
-        thread1.start()
-        sleep(1)
-        thread2.start()
-        sleep(1)
-        thread3.start()
-        thread4.start()
-        thread1.join()
-        thread2.join()
-        thread3.join()
-        thread4.join()
-        return
+    # def startallshell(self):
+    #     # 开启与WiFi热点相关的所有数据
+    #     thread1 = threading.Thread(target=self.starthostadp)
+    #     # self.starthostadp()
+    #     # sleep(1)
+    #     thread2 = threading.Thread(target=self.startdhcp)
+    #     # self.startdhcp()
+    #     # sleep(1)
+    #     thread3 = threading.Thread(target=self.startrouter)
+    #     # self.startrouter()
+    #     mobi = HOSTAPD()
+    #     thread4 = threading.Thread(target=mobi.startcollect)
+    #     # mobi.startcollect()
+    #     thread1.start()
+    #     sleep(1)
+    #     thread2.start()
+    #     sleep(1)
+    #     thread3.start()
+    #     thread4.start()
+    #     thread1.join()
+    #     thread2.join()
+    #     thread3.join()
+    #     thread4.join()
+    #     return
 
     def shutdowntheshell(self):
         call("ps -ef|grep hostapd|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
