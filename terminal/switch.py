@@ -7,6 +7,7 @@ create by swm
 """
 from subprocess import Popen, call
 from time import sleep
+import threading
 
 from terminal.allconfig import conf
 from terminal.gethostapdfield import HOSTAPD
@@ -15,9 +16,9 @@ from terminal.gethostapdfield import HOSTAPD
 class WEBSWITCH:
 
     def __init__(self):
-        self.hostapdshell = '/home/starthostapd.sh'
-        self.dhcpshell = '/home/startdhcp.sh'
-        self.routershell = '/home/startrouter.sh'
+        self.hostapdshell = conf['hostapdshell']
+        self.dhcpshell = conf['dhcpshell']
+        self.routershell = conf['routershell']
         self.hostapdlog = conf['hostapdlog']
         self.dhcplog = conf['dhcplog']
 
@@ -46,13 +47,27 @@ class WEBSWITCH:
 
     def startallshell(self):
         # 开启与WiFi热点相关的所有数据
-        self.starthostadp()
-        sleep(1)
-        self.startdhcp()
-        sleep(1)
-        self.startrouter()
+        thread1 = threading.Thread(target=self.starthostadp)
+        # self.starthostadp()
+        # sleep(1)
+        thread2 = threading.Thread(target=self.startdhcp)
+        # self.startdhcp()
+        # sleep(1)
+        thread3 = threading.Thread(target=self.startrouter)
+        # self.startrouter()
         mobi = HOSTAPD()
-        mobi.startcollect()
+        thread4 = threading.Thread(target=mobi.startcollect)
+        # mobi.startcollect()
+        thread1.start()
+        sleep(1)
+        thread2.start()
+        sleep(1)
+        thread3.start()
+        thread4.start()
+        thread1.join()
+        thread2.join()
+        thread3.join()
+        thread4.join()
         return
 
     def shutdowntheshell(self):
