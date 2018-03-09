@@ -15,7 +15,7 @@ class IWWIFI:
     def __init__(self):
         self.shell = 'iwconfig'
         self.hostapdconf = conf['hostapdconf']
-        self.dhcpsh = conf['dhcpsh']
+        self.dhcpsh = conf['dhcpshell']
 
     def getallname(self):
         p = Popen('iwconfig', stdout=PIPE, stderr=PIPE, shell=True)
