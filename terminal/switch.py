@@ -29,7 +29,6 @@ class WEBSWITCH:
         p = Popen(self.hostapdshell, stderr=fderr, stdout=fdout, shell=True)
         if p.poll():
             return
-        p.wait()
         return
 
     def startdhcp(self):
@@ -38,23 +37,22 @@ class WEBSWITCH:
         p = Popen(self.dhcpshell, stderr=fderr, stdout=fdout, shell=True)
         if p.poll():
             return
-        p.wait()
         return
 
     def startrouter(self):
         p = Popen(self.routershell, shell=True)
         return
 
-    # def startallshell(self):
-    #     # 开启与WiFi热点相关的所有数据
+    def startallshell(self):
+        # 开启与WiFi热点相关的所有数据
     #     thread1 = threading.Thread(target=self.starthostadp)
-    #     # self.starthostadp()
-    #     # sleep(1)
+        self.starthostadp()
+        sleep(1)
     #     thread2 = threading.Thread(target=self.startdhcp)
-    #     # self.startdhcp()
-    #     # sleep(1)
+        self.startdhcp()
+        sleep(1)
     #     thread3 = threading.Thread(target=self.startrouter)
-    #     # self.startrouter()
+        self.startrouter()
     #     mobi = HOSTAPD()
     #     thread4 = threading.Thread(target=mobi.startcollect)
     #     # mobi.startcollect()
@@ -68,9 +66,10 @@ class WEBSWITCH:
     #     thread2.join()
     #     thread3.join()
     #     thread4.join()
-    #     return
+        return
 
-    def shutdowntheshell(self):
+    def shutdowntheshell(self, wlanname):
         call("ps -ef|grep hostapd|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
         call("ps -ef|grep dhcp|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
+        call("ifconfig {} down".format(wlanname), shell=True)
         return

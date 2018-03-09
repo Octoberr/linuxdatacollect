@@ -48,27 +48,13 @@ def start():
         # 调用开始函数
         # print 'start the mobi info collection'
         switch = WEBSWITCH()
-        thread1 = threading.Thread(target=switch.starthostadp)
-        # self.starthostadp()
-        # sleep(1)
-        thread2 = threading.Thread(target=switch.startdhcp)
-        # self.startdhcp()
-        # sleep(1)
-        thread3 = threading.Thread(target=switch.startrouter)
-        # self.startrouter()
+        thread1 = threading.Thread(target=switch.startallshell())
         mobi = HOSTAPD()
-        thread4 = threading.Thread(target=mobi.startcollect)
-        # mobi.startcollect()
+        thread2 = threading.Thread(target=mobi.startcollect)
         thread1.start()
-        sleep(1)
         thread2.start()
-        sleep(1)
-        thread3.start()
-        thread4.start()
-        thread1.join()
-        thread2.join()
-        thread3.join()
-        thread4.join()
+        # thread1.join()
+        # thread2.join()
         info = {"started": 1}
     else:
         info = {"started": 0, "erro": "something wrong with the data."}
@@ -79,11 +65,12 @@ def start():
 def stop():
     args = json.loads(request.data)
     stopcode = args['stop']
+    stopwlan = args['wlanname']
     if int(stopcode) == 1:
         # 调用停止函数
         # print "stop the mobi info collection"
         switch = WEBSWITCH()
-        switch.shutdowntheshell()
+        switch.shutdowntheshell(stopwlan)
         info = {"stopcode": 1}
     else:
         info = {"stopcode": 0, "erro": "something wrong with the data."}
