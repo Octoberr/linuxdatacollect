@@ -53,7 +53,7 @@ class IWWIFI:
         re_wlanname = re.compile(r'wlan\d')
         newsrc = re_wlanname.sub(r'{}'.format(wlanname), oldsrc)
         oldf.close()
-        wopen = open(self.dhcpsh, 'w')
+        wopen = open(self.wifishell, 'w')
         wopen.write(newsrc)
         wopen.close()
         return
