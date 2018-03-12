@@ -12,6 +12,6 @@ class SWITCH:
 
     def stopwifi(self, wlanname):
         call('airmon-ng stop {}mon'.format(wlanname), shell=True)
-        call('ifconfig {} down'.format(wlanname, shell=True))
+        call('ifconfig {} down'.format(wlanname), shell=True)
         info = {"stoped": 1}
         return info
