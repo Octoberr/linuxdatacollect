@@ -16,6 +16,7 @@ class IWWIFI:
         self.shell = 'iwconfig'
         self.hostapdconf = conf['hostapdconf']
         self.dhcpsh = conf['dhcpshell']
+        self.wifishell = conf['wifishell']
 
     def getallname(self):
         p = Popen('iwconfig', stdout=PIPE, stderr=PIPE, shell=True)
@@ -37,6 +38,17 @@ class IWWIFI:
 
     def changedhcpconf(self, wlanname):
         oldf = open(self.dhcpsh, 'r')
+        oldsrc = oldf.read()
+        re_wlanname = re.compile(r'wlan\d')
+        newsrc = re_wlanname.sub(r'{}'.format(wlanname), oldsrc)
+        oldf.close()
+        wopen = open(self.dhcpsh, 'w')
+        wopen.write(newsrc)
+        wopen.close()
+        return
+
+    def changwifishell(self, wlanname):
+        oldf = open(self.wifishell, 'r')
         oldsrc = oldf.read()
         re_wlanname = re.compile(r'wlan\d')
         newsrc = re_wlanname.sub(r'{}'.format(wlanname), oldsrc)

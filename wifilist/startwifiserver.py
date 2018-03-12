@@ -17,7 +17,7 @@ fileDir = os.path.dirname(os.path.realpath(__file__))
 class CONTROL:
 
     def __init__(self, seconds):
-        self.pypath = os.path.join(fileDir, 'getwifilist.py')
+        # self.pypath = os.path.join(fileDir, 'getwifilist.py')
         self.logpath = "/home/execute.log"
         self.shellpath = "/home/getallwifi.sh"
         self.seconds = seconds
@@ -26,8 +26,10 @@ class CONTROL:
     def collectwifilist(self, text):
         from getwifilist import WIFINAME
         wifi = WIFINAME()
+        # 匹配wifi信息
         wifilist = wifi.getwifilist(text)
         # print wifilist
+        # 存储已经筛选的日志信息
         wifi.startcollectinfo(wifilist)
         return
         # call("python {}".format(self.pypath), shell=True)
@@ -52,6 +54,7 @@ class CONTROL:
         with open(self.logpath, "a") as file:
             file.write(log)
         file.close()
+        return
 
     # 程序运行入口
     def start(self):
@@ -67,3 +70,4 @@ class CONTROL:
         self.writelog("{} Start insert to mongo.".format(datetime.datetime.now()))
         self.collectwifilist(text)
         return
+

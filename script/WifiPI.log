@@ -1,38 +1,46 @@
-Wifiɨ��
+Wifi扫描
 http://192.168.1.138:8014/api/startcollect
-post:{��start��:1, ��seconds��:10}Ĭ��ɨ��ʱ��Ϊ10s
-�ӿڻ᷵��{��complete��:0/1, ��error��:��info��}
-��������ִ�л᷵�����״̬��������������ֹ�᷵�ش���ԭ��
+post:{“start”:1, “seconds”:10}默认扫描时间为10s
+接口会返回{“complete”:0/1, “error”:”info”}
+程序正常执行会返回完成状态，当程序被意外终止会返回错误原因
+
+http://192.168.1.138:8014/api/whichwlan
+post:{“wlanname”: “wlan0”}
+接口返回{“changed”:1}
 
 http://192.168.1.138:8014/api/handshake
-post: {��mac��:����, ��ch��:num , ��wifi��:��wifiname��}
-��ȡָ��wifi�����ְ�
-�ӿڻ᷵��{��complete��:0/1, ��error��:��info��}
-��������ִ�л᷵�����״̬��������������ֹ�᷵�ش���ԭ��
+post: {“mac”:””, “ch”:num , ”wifi”:”wifiname”, “wlanname”:“wlan0”}
+获取指定wifi的握手包
+接口会返回{“complete”:0/1, “error”:”info”}
+程序正常执行会返回完成状态，当程序意外终止会返回错误原因
 
 http://192.168.1.138:8014/api/download/<wifiname>
-get:���Ӵ���Ҫ����wifi��������
-����ִ�гɹ����������ְ��ļ���ִ�г�������ʾ���ļ���������
+get:链接传入要下载wifi包的名字
+程序执行成功会下载握手包文件，执行出错会提示无文件可以下载
 
-http://192.168.1.138:27017 mongodb�����ݿ��ַ��Ŀǰ�洢WiFi�б����ֻ���Ϣ
+http://192.168.1.138:8014/api/shutdown
+post：{“wlanname”:“wlan0”}
+关闭成功接口会返回{“stoped”:1}
 
-�ȵ����
+http://192.168.1.138:27017 mongodb的数据库地址，目前存储WiFi列表和手机信息
+
+热点放送
 
 
 http://192.168.1.138:8015/api/allwlan
-get����json, info = {"wlan": ['wlan0', 'wlan1', 'wlan2']}
+get返回json, info = {"wlan": ['wlan0', 'wlan1', 'wlan2']}
 
 http://192.168.1.138:8015/api/whichwlan
-post:{��wlanname������wlanname��}��ѡ�����������������ȵ�
-����json{��changed��:1}
+post:{“wlanname”：“wlanname”}，选择以哪张网卡开放热点
+返回json{“changed”:1}
 
 http://192.168.1.138:8015/api/start
-post:{��start��:1}�������ȵ㣬����ʼ�Ѽ��ֻ���Ϣ
-����json{��started��:1}
+post:{“start”:1}，开启热点，并开始搜集手机信息
+返回json{“started”:1}
 
 http://192.168.1.138:8015/api/shutdown
-post:{��stop��:1},�ر��ȵ㣬��ֹͣ�ռ��ֻ���Ϣ
-����json{��stopcode��:1}
+post:{“stop”:1， “wlanname”:“wlan0”},关闭热点，并停止收集手机信息
+返回json{“stopcode”:1}
 
 http://192.168.1.138:8015/api/mobiinfo
-get,���json data������ʱ�������µ�����
+get,获得json data，访问时给予最新的数据

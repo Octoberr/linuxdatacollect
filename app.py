@@ -1,6 +1,6 @@
 # coding:utf-8
 import threading
-from flask import Flask, request, Response, send_from_directory, make_response, render_template
+from flask import Flask, request, Response, send_from_directory, make_response
 import json
 import gevent.monkey
 from gevent.pywsgi import WSGIServer
@@ -10,7 +10,8 @@ gevent.monkey.patch_all()
 from wifilist.startwifiserver import CONTROL
 from wifilist.getwifihandshake import HANDSHAKE
 from wifilist.routeattack import ROUTE
-# from wifilist.mongoquery import getquerydate
+from terminal.getallwifiname import IWWIFI
+from wifilist.wifiswitch import SWITCH
 app = Flask(__name__)
 
 
@@ -28,10 +29,20 @@ app = Flask(__name__)
 # def sendmongodata():
 #     responsedata = getquerydate()
 #     return Response(responsedata, mimetype="application/json")
+# 选择哪张wifi去运行wifi扫描
+@app.route('/api/whichwlan', methods=['post'])
+def choosewlan():
+    args = json.loads(request.data)
+    wlan = args['wlanname']
+    iw = IWWIFI()
+    iw.changwifishell(wlan)
+    info = {"changed": 1}
+    return Response(json.dumps(info), mimetype="application/json")
 
 
 @app.route('/api/startcollect', methods=['post'])
 def starttheserver():
+    # 搜集并存储扫描的wifi信息
     args = json.loads(request.data)
     # 类型强转确保int
     seconds = int(args['seconds'])
@@ -52,8 +63,8 @@ def starttheserver():
 @app.route('/api/handshake', methods=['post'])
 def collecthandshake():
     args = json.loads(request.data)
-    handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'])
-    router = ROUTE(args['mac'])
+    handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'], args['wlanname'])
+    router = ROUTE(args['mac'], args['wlanname'])
     t1 = threading.Thread(target=handshake.starthandshake)
     t2 = threading.Thread(target=router.start)
     t1.start()
@@ -69,7 +80,6 @@ def collecthandshake():
     else:
         info = {"complete": 0, "error": "Failed get wifi handshake"}
     r.delete("handshake")
-    info = {"complete": 1}
     return Response(json.dumps(info), mimetype="application/json")
 
 
@@ -84,6 +94,15 @@ def download(wifi):
     #     return Response(json.dumps(info), mimetype="application/json")
     response.headers["Content-Disposition"] = "attachment; filename={}".format(filename.encode().decode('latin-1'))
     return response
+
+
+@app.route('/api/shutdown', methods=['post'])
+def shutdownwifi():
+    args = json.loads(request.data)
+    wlanname = args['wlanname']
+    switch = SWITCH()
+    info = switch.stopwifi(wlanname)
+    return Response(json.dumps(info), mimetype="application/json")
 
 
 if __name__ == '__main__':

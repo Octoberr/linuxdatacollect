@@ -15,13 +15,14 @@ filedir = os.path.dirname(os.path.realpath(__file__))
 
 class HANDSHAKE:
 
-    def __init__(self, mac, ch, wifi):
+    def __init__(self, mac, ch, wifi, wlanname):
         # self.hslogpath = os.path.join(filedir, 'routrattack', 'wifihandshake.log')
         # self.logpath = "/home/execute.log"
         self.savedatapath = '/home/wifidata/'
         self.mac = mac
         self.ch = ch
         self.wifi = wifi
+        self.wlanname = wlanname
         # 获得文件的路径
         self.wifihandshake = '/home/wifidata/{}-01.cap'.format(wifi)
         # 保存文件的路径
@@ -47,7 +48,7 @@ class HANDSHAKE:
         # 在获取握手包前先删除以前的握手包
         self.delunusefile()
         # 开启获取wifi握手包的命令，并将log写入文件，本地获得一个文件
-        cmd = 'airodump-ng -c {} --bssid {} -w {} wlan0mon'.format(self.ch, self.mac, self.savedatapath + self.wifi)
+        cmd = 'airodump-ng -c {} --bssid {} -w {} {}mon'.format(self.ch, self.mac, self.savedatapath + self.wifi, self.wlanname)
         strdata = self.writeinfotolog(cmd)
         re_handshake = re.compile(r'WPA handshake\:.{}'.format(self.mac))
         for line in strdata.splitlines():

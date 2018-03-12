@@ -11,6 +11,7 @@ conf['hostapdconf'] = "/etc/hostapd/hostapd.conf"
 conf['hostapdshell'] = "/home/starthostapd.sh"
 conf['dhcpshell'] = "/home/startdhcp.sh"
 conf['routershell'] = "/home/startrouter.sh"
+conf['wifishell'] = "/home/getallwifi.sh"
 conf['Jan'] = 1
 conf['Feb'] = 2
 conf['Mar'] = 3
