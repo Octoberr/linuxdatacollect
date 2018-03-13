@@ -24,7 +24,8 @@ def insertmoibiinfo(mobi):
     db = client.swmdb
     information = db.mobi
     information.insert(mobi)
-    print datetime.datetime.now(), 'insert mobi success'
+    # print datetime.datetime.now(), 'insert mobi success'
+    return
 
 
 # 查询手机信息

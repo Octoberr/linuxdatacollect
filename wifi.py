@@ -48,7 +48,7 @@ def start():
         # 调用开始函数
         # print 'start the mobi info collection'
         switch = WEBSWITCH()
-        thread1 = threading.Thread(target=switch.startallshell())
+        thread1 = threading.Thread(target=switch.startallshell)
         mobi = HOSTAPD()
         thread2 = threading.Thread(target=mobi.startcollect)
         thread1.start()
