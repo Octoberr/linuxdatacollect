@@ -15,3 +15,4 @@ class SWITCH:
         call('ifconfig {} down'.format(wlanname), shell=True)
         info = {"stoped": 1}
         return info
+

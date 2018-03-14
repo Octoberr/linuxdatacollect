@@ -62,3 +62,42 @@ class IWWIFI:
         self.changehostapdconf(wlanname)
         self.changedhcpconf(wlanname)
         return
+
+    def changewificonf(self, name, pwd):
+        oldf = open(self.hostapdconf, 'r')
+        oldsrc = oldf.read()
+        re_name = re.compile(r'(\bssid\=)(.+)')
+        re_pwd = re.compile(r'(wpa\_passphrase\=)(.+)')
+        name = re_name.sub(r'\1{}'.format(name), oldsrc)
+        pwd = re_pwd.sub(r'\1{}'.format(pwd), name)
+        oldf.close()
+        wopen = open(self.hostapdconf, 'w')
+        wopen.write(pwd)
+        wopen.close()
+        return
+
+# if __name__ == '__main__':
+#     import os
+#     file = os.path.dirname(os.path.realpath(__file__))
+#     hostconf = os.path.join(file, '..', 'script', 'hostapd.conf')
+#     # print hostconf
+#     src = open(hostconf, 'r')
+#     content = src.read()
+#     print content
+#     re_name = re.compile(r'(\bssid\=)(.+)')
+#     re_pwd = re.compile(r'(wpa\_passphrase\=)(.+)')
+#     name = re_name.sub(r'\1swm', content)
+#     pwd = re_pwd.sub(r'\1adsx123', name)
+#     print name
+#     print pwd
+    # for line in content:
+    # name = re_name.search(content)
+    # pwd = re_pwd.search(content)
+    # if name:
+    #     print name.group(2)
+    # if pwd:
+    #     print pwd.group(2)
+    # name = re_name.findall(content)
+    # pwd = re_pwd.findall(content)
+    # print name
+    # print pwd

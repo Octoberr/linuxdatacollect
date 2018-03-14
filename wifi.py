@@ -40,6 +40,18 @@ def wlanname():
     return Response(json.dumps(info), mimetype="application/json")
 
 
+@app.route('/api/wificonf', methods=['post'])
+def wificonf():
+    args = json.loads(request.data)
+    name = args['name']
+    pwd = args['pwd']
+    # 改变热点名字和密码
+    iw = IWWIFI()
+    iw.changewificonf(name, pwd)
+    info = {"changed": 1}
+    return Response(json.dumps(info), mimetype="application/json")
+
+
 @app.route('/api/start', methods=['post'])
 def start():
     args = json.loads(request.data)
