@@ -34,6 +34,11 @@ http://192.168.1.138:8015/api/whichwlan
 post:{“wlanname”：“wlanname”}，选择以哪张网卡开放热点
 返回json{“changed”:1}
 
+http://192.168.1.138:8015/api/wificonf
+post{“name”:“name”, “pwd”:”pwd”}
+返回json{“changed”:1}
+
+
 http://192.168.1.138:8015/api/start
 post:{“start”:1}，开启热点，并开始搜集手机信息
 返回json{“started”:1}
