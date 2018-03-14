@@ -66,37 +66,43 @@ class IWWIFI:
     def changewificonf(self, name, pwd):
         oldf = open(self.hostapdconf, 'r')
         oldsrc = oldf.read()
-        re_name = re.compile(r'(\bssid\=)(.+)')
-        re_pwd = re.compile(r'(wpa\_passphrase\=)(.+)')
-        name = re_name.sub(r'\1{}'.format(name), oldsrc)
-        pwd = re_pwd.sub(r'\1{}'.format(pwd), name)
+        re_name = re.compile(r'\bssid\=.+')
+        re_pwd = re.compile(r'wpa\_passphrase\=.+')
+        name = re_name.sub(r'ssid={}'.format(name), oldsrc)
+        pwd = re_pwd.sub(r'wpa_passphrase={}'.format(pwd), name)
         oldf.close()
         wopen = open(self.hostapdconf, 'w')
         wopen.write(pwd)
         wopen.close()
         return
 
+
 # if __name__ == '__main__':
-#     import os
-#     file = os.path.dirname(os.path.realpath(__file__))
-#     hostconf = os.path.join(file, '..', 'script', 'hostapd.conf')
-#     # print hostconf
-#     src = open(hostconf, 'r')
-#     content = src.read()
-#     print content
-#     re_name = re.compile(r'(\bssid\=)(.+)')
-#     re_pwd = re.compile(r'(wpa\_passphrase\=)(.+)')
-#     name = re_name.sub(r'\1swm', content)
-#     pwd = re_pwd.sub(r'\1adsx123', name)
-#     print name
-#     print pwd
+    # iw = IWWIFI()
+    # iw.changewificonf('swm', '454545sw')
+    # import os
+    # file = os.path.dirname(os.path.realpath(__file__))
+    # hostconf = os.path.join(file, '..', 'script', 'hostapd.conf')
+    # # print hostconf
+    # src = open(hostconf, 'r')
+    # content = src.read()
+    # re_name = re.compile(r'\bssid\=.+')
+    # re_pwd = re.compile(r'wpa\_passphrase\=.+')
+    # name = re_name.sub(r'ssid=swm', content)
+    # pwd = re_pwd.sub(r'wpa_passphrase=1234987', name)
+    # print name
+    # print pwd
+    # src.close()
+    # wopen = open(hostconf, 'w')
+    # wopen.write(pwd)
+    # wopen.close()
     # for line in content:
     # name = re_name.search(content)
     # pwd = re_pwd.search(content)
     # if name:
-    #     print name.group(2)
+    #     print name.group()
     # if pwd:
-    #     print pwd.group(2)
+    #     print pwd.group()
     # name = re_name.findall(content)
     # pwd = re_pwd.findall(content)
     # print name
