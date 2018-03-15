@@ -1,0 +1,282 @@
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from ec:d0:9f:96:3a:9f via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   LPF/wlan0/f2:14:26:09:b0:7e/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+/bin/sh: 1: /home/startdhcp.sh: Permission denied
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/f2:dc:24:6e:9c:7d/10.0.0.0/24
+Sending on   LPF/wlan0/f2:dc:24:6e:9c:7d/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from ec:d0:9f:96:3a:9f via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+SIOCADDRT: Network is down
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/9e:02:ce:75:60:c2/10.0.0.0/24
+Sending on   LPF/wlan1/9e:02:ce:75:60:c2/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+reuse_lease: lease age 136 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPDISCOVER from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+reuse_lease: lease age 137 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+reuse_lease: lease age 137 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/e8:4e:06:57:43:63/10.0.0.0/24
+Sending on   LPF/wlan1/e8:4e:06:57:43:63/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from ec:d0:9f:96:3a:9f via wlan1
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+SIOCADDRT: File exists
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+There's already a DHCP server running.
+
+If you think you have received this message due to a bug rather
+than a configuration issue please read the section on submitting
+bugs on either our web page at www.isc.org or in the README file
+before submitting a bug.  These pages explain the proper
+process and the information we find helpful for debugging..
+
+exiting.
+SIOCSIFADDR: No such device
+wlan0: ERROR while getting interface flags: No such device
+SIOCSIFNETMASK: No such device
+SIOCSIFMTU: No such device
+SIOCADDRT: Network is unreachable
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+
+No subnet declaration for wlan0 (no IPv4 addresses).
+** Ignoring requests on wlan0.  If this is not what
+   you want, please write a subnet declaration
+   in your dhcpd.conf file for the network segment
+   to which interface wlan0 is attached. **
+
+
+Not configured to listen on any interfaces!
+
+If you think you have received this message due to a bug rather
+than a configuration issue please read the section on submitting
+bugs on either our web page at www.isc.org or in the README file
+before submitting a bug.  These pages explain the proper
+process and the information we find helpful for debugging..
+
+exiting.
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/e8:4e:06:33:3f:c2/10.0.0.0/24
+Sending on   LPF/wlan0/e8:4e:06:33:3f:c2/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan0/1a:a2:72:04:51:40/10.0.0.0/24
+Sending on   LPF/wlan0/1a:a2:72:04:51:40/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from ec:d0:9f:96:3a:9f via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPDISCOVER from 30:74:96:c1:00:67 via wlan0
+DHCPDISCOVER from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPDISCOVER from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan0
+DHCPOFFER on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.30
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+reuse_lease: lease age 32 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.30
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+reuse_lease: lease age 32 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.30
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+reuse_lease: lease age 32 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.30
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+reuse_lease: lease age 32 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.30
+DHCPREQUEST for 10.0.0.30 (10.0.0.1) from 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+DHCPACK on 10.0.0.30 to 30:74:96:c1:00:67 (Honor_8_Lite) via wlan0
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/c6:a0:96:ea:08:62/10.0.0.0/24
+Sending on   LPF/wlan1/c6:a0:96:ea:08:62/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+receive_packet failed on wlan1: Network is down
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+There's already a DHCP server running.
+
+If you think you have received this message due to a bug rather
+than a configuration issue please read the section on submitting
+bugs on either our web page at www.isc.org or in the README file
+before submitting a bug.  These pages explain the proper
+process and the information we find helpful for debugging..
+
+exiting.
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/e8:4e:06:57:43:63/10.0.0.0/24
+Sending on   LPF/wlan1/e8:4e:06:57:43:63/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/32:fc:86:46:43:e5/10.0.0.0/24
+Sending on   LPF/wlan1/32:fc:86:46:43:e5/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.
+DHCPDISCOVER from ec:d0:9f:96:3a:9f via wlan1
+DHCPOFFER on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+reuse_lease: lease age 0 (secs) under 25% threshold, reply with unaltered, existing lease for 10.0.0.40
+DHCPREQUEST for 10.0.0.40 (10.0.0.1) from ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+DHCPACK on 10.0.0.40 to ec:d0:9f:96:3a:9f (MI6-october) via wlan1
+Internet Systems Consortium DHCP Server 4.3.5
+Copyright 2004-2016 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Config file: /etc/dhcp/dhcpd.conf
+Database file: /var/lib/dhcp/dhcpd.leases
+PID file: /var/run/dhcpd.pid
+Wrote 17 leases to leases file.
+Listening on LPF/wlan1/32:fc:86:46:43:e5/10.0.0.0/24
+Sending on   LPF/wlan1/32:fc:86:46:43:e5/10.0.0.0/24
+Sending on   Socket/fallback/fallback-net
+Server starting service.

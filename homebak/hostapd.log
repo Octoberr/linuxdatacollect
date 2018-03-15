@@ -1,0 +1,282 @@
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr f2:14:26:09:b0:7e and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA24030-00000000
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr f2:14:26:09:b0:7e and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr f2:14:26:09:b0:7e and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr e8:4e:06:33:3f:c2 and ssid "ssa_wifi_ap"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
+wlan1: INTERFACE-DISABLED 
+wlan1: INTERFACE-ENABLED 
+Failed to set beacon parameters
+wlan1: INTERFACE-DISABLED 
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan1 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan1: interface state UNINITIALIZED->DISABLED
+wlan1: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan1 wasn't started
+wlan1: INTERFACE-ENABLED 
+Failed to set beacon parameters
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+Failed to set beacon parameters
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr 26:3a:2e:dd:b9:e7 and ssid "ssa_wifi_ap"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
+Configuration file: /etc/hostapd/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan1 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan1: interface state UNINITIALIZED->DISABLED
+wlan1: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan1 wasn't started
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+handle_probe_req: send failed
+Failed to set beacon parameters
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr fe:e6:ef:76:1f:64 and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA64077-00000000
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA64077-00000001
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA64077-00000002
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr fe:e6:ef:76:1f:64 and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr f2:dc:24:6e:9c:7d and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA644A4-00000000
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr 9e:02:ce:75:60:c2 and ssid "ssa_wifi_ap"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan1: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan1: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA6451F-00000000
+wlan1: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan1: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr e8:4e:06:57:43:63 and ssid "ssa_wifi_ap"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan1: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan1: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA73137-00000000
+wlan1: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan1: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan1 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan1: interface state UNINITIALIZED->DISABLED
+wlan1: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan1 wasn't started
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Could not read interface wlan0 flags: No such device
+nl80211: Driver does not support authentication/association or connect commands
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Could not read interface wlan0 flags: No such device
+nl80211 driver initialization failed.
+wlan0: interface state UNINITIALIZED->DISABLED
+wlan0: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr e8:4e:06:33:3f:c2 and ssid "ssa_wifi_ap"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-DISABLED 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan0 with hwaddr 1a:a2:72:04:51:40 and ssid "ssa_wifi_ap"
+random: Only 11/20 bytes of strong random data available from /dev/random
+random: Not enough entropy pool available for secure operations
+WPA: Not enough entropy in random pool for secure operations - update keys later when the first station connects
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+random: Cannot read from /dev/random: Resource temporarily unavailable
+random: Only 11/20 bytes of strong random data available from /dev/random
+random: Not enough entropy pool available for secure operations
+WPA: Not enough entropy in random pool to proceed - reject first 4-way handshake
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+random: Cannot read from /dev/random: Resource temporarily unavailable
+random: Only 11/20 bytes of strong random data available from /dev/random
+random: Not enough entropy pool available for secure operations
+WPA: Not enough entropy in random pool to proceed - reject first 4-way handshake
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan0: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+random: Cannot read from /dev/random: Resource temporarily unavailable
+random: Only 11/20 bytes of strong random data available from /dev/random
+random: Allow operation to proceed based on internal entropy
+wlan0: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan0: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA793B5-00000000
+wlan0: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: authenticated
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: associated (aid 2)
+wlan0: AP-STA-CONNECTED 30:74:96:c1:00:67
+wlan0: STA 30:74:96:c1:00:67 RADIUS: starting accounting session 5AA793B5-00000001
+wlan0: STA 30:74:96:c1:00:67 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED 30:74:96:c1:00:67
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: disassociated
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: authenticated
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: associated (aid 2)
+wlan0: AP-STA-CONNECTED 30:74:96:c1:00:67
+wlan0: STA 30:74:96:c1:00:67 RADIUS: starting accounting session 5AA793B5-00000002
+wlan0: STA 30:74:96:c1:00:67 WPA: pairwise key handshake completed (RSN)
+wlan0: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+wlan0: AP-STA-DISCONNECTED 30:74:96:c1:00:67
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: disassociated
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: authenticated
+wlan0: STA 30:74:96:c1:00:67 IEEE 802.11: associated (aid 1)
+wlan0: AP-STA-CONNECTED 30:74:96:c1:00:67
+wlan0: STA 30:74:96:c1:00:67 RADIUS: starting accounting session 5AA793B5-00000003
+wlan0: STA 30:74:96:c1:00:67 WPA: pairwise key handshake completed (RSN)
+Configuration file: /etc/hostapd/hostapd.conf
+Line 11: invalid line 'J345689'
+WPA-PSK enabled, but PSK or passphrase is not configured.
+2 errors found in configuration file '/etc/hostapd/hostapd.conf'
+Failed to set up interface with /etc/hostapd/hostapd.conf
+Failed to initialize interface
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Line 11: invalid line 'J345678'
+WPA-PSK enabled, but PSK or passphrase is not configured.
+2 errors found in configuration file '/etc/hostapd/hostapd.conf'
+Failed to set up interface with /etc/hostapd/hostapd.conf
+Failed to initialize interface
+Error: NetworkManager is not running.
+Configuration file: /etc/hostapd/hostapd.conf
+Line 11: invalid line 'J345678'
+WPA-PSK enabled, but PSK or passphrase is not configured.
+2 errors found in configuration file '/etc/hostapd/hostapd.conf'
+Failed to set up interface with /etc/hostapd/hostapd.conf
+Failed to initialize interface
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr 32:fc:86:46:43:e5 and ssid "wwrw"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: authenticated
+wlan1: STA ec:d0:9f:96:3a:9f IEEE 802.11: associated (aid 1)
+wlan1: AP-STA-CONNECTED ec:d0:9f:96:3a:9f
+wlan1: STA ec:d0:9f:96:3a:9f RADIUS: starting accounting session 5AA8C194-00000000
+wlan1: STA ec:d0:9f:96:3a:9f WPA: pairwise key handshake completed (RSN)
+wlan1: AP-STA-DISCONNECTED ec:d0:9f:96:3a:9f
+Configuration file: /etc/hostapd/hostapd.conf
+Using interface wlan1 with hwaddr 32:fc:86:46:43:e5 and ssid "wwrw"
+wlan1: interface state UNINITIALIZED->ENABLED
+wlan1: AP-ENABLED 
