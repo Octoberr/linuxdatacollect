@@ -32,6 +32,12 @@ class HOSTAPD:
         factory = re_factory.findall(dhcpfile)[0]
         return factory
 
+    def getthehostapdname(self):
+        hostapdconffile = open(conf['hostapdconf'], "r").read()
+        re_name = re.compile(r'\bssid\=(.+)')
+        wifiname = re_name.findall(hostapdconffile)
+        return wifiname[0]
+
     def startcollect(self):
         re_connect = re.compile(r'AP-STA-CONNECTED.(\S+\:\S+\:\S+\:\S+\:\S+\:\S+)')
         re_disconnect = re.compile(r'AP-STA-DISCONNECTED.(\S+\:\S+\:\S+\:\S+\:\S+\:\S+)')
@@ -40,11 +46,13 @@ class HOSTAPD:
         for line in loglines:
             connect = re_connect.search(line)
             if connect:
+                wifiname = self.getthehostapdname()
                 name = connect.group(1)
                 # 上线时间
                 connecttime = int(time.time())
                 self.r.hset(name, "onlinetime", connecttime)
                 self.r.hset(name, "devicemac", name)
+                self.r.hset(name, "wifiname", wifiname)
                 continue
             disconnect = re_disconnect.search(line)
             if disconnect:

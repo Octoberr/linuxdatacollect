@@ -14,7 +14,7 @@ def getquerydate():
     # today
     today = time.mktime(datetime.date.today().timetuple())
     res = []
-    client = pymongo.MongoClient(host="192.168.1.138", port=27017)
+    client = pymongo.MongoClient(host="localhost", port=27017)
     db = client.swmdb
     collection = db.wifilist
     # cursor = collection.find({"unixtime": {"$gt": int(today)}}, {"_id": 0}).sort({"unixtime": -1})

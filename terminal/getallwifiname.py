@@ -83,9 +83,12 @@ class IWWIFI:
     # import os
     # file = os.path.dirname(os.path.realpath(__file__))
     # hostconf = os.path.join(file, '..', 'script', 'hostapd.conf')
-    # # print hostconf
+    # # # print hostconf
     # src = open(hostconf, 'r')
     # content = src.read()
+    # re_name = re.compile(r'\bssid\=(.+)')
+    # wifiname = re_name.findall(content)
+    # print wifiname
     # re_name = re.compile(r'\bssid\=.+')
     # re_pwd = re.compile(r'wpa\_passphrase\=.+')
     # name = re_name.sub(r'ssid=swm', content)

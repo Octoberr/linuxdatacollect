@@ -18,7 +18,7 @@ class WIFINAME:
 
     def __init__(self):
         self.logpath = "/home/execute.log"
-        self.mongohost = "192.168.1.138"
+        self.mongohost = "localhost"
         self.mongoport = 27017
 
     def insertintomongo(self, wifilist):
