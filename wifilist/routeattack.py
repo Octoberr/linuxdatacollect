@@ -20,7 +20,7 @@ class ROUTE:
 
     # 保存shell的所有输出
     def writeinfotolog(self):
-        cmd = 'aireplay-ng --deauth 10 -a {} {}mon'.format(self.mac, self.wlanname)
+        cmd = 'aireplay-ng -0 10 -a {} {}mon'.format(self.mac, self.wlanname)
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, err = p.communicate()
         return output

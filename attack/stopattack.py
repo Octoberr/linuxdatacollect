@@ -4,16 +4,14 @@
 结束死循环式的攻击
 反正就是结束攻击
 """
-from subprocess import call
+import redis
 
 
 class SHUTDOWN:
-    def __init__(self, wlanname):
-        self.wlanname = wlanname
 
     def attackover(self):
-        call("ps -ef|grep airodump-ng|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
-        call('airmon-ng stop {}mon'.format(self.wlanname))
+        r = redis.Redis(host="localhost", port=6379)
+        r.hset('attack', 'statu', 0)
         return
 
 
