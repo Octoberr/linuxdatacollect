@@ -14,6 +14,17 @@
             <SshTunnelingConfiguration />
           </option>
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="testmongo" />
+          <option name="serverUrls">
+            <list>
+              <option value="192.168.1.138:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+        </ServerConfiguration>
       </list>
     </option>
   </component>
