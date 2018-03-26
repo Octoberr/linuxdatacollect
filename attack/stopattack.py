@@ -16,5 +16,5 @@ class SHUTDOWN:
 
 
 if __name__ == '__main__':
-    shuwdown = SHUTDOWN('wlan1')
+    shuwdown = SHUTDOWN()
     shuwdown.attackover()
