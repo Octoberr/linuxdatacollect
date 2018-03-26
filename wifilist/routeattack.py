@@ -42,9 +42,9 @@ class ROUTE:
                 break
             count += 1
             strtext = self.writeinfotolog()
-            router = re_route.findall(strtext)
+            router = re_route.search(strtext)
             # 泛洪攻击没有成功则停0.5s继续
-            if len(router) == 0:
+            if router:
                 time.sleep(0.2)
             else:
                 # 泛洪攻击成功后停止程序

