@@ -64,7 +64,7 @@ def starttheserver():
 def collecthandshake():
     args = json.loads(request.data)
     handshake = HANDSHAKE(args['mac'], int(args['ch']), args['wifi'], args['wlanname'])
-    router = ROUTE(args['mac'], args['wlanname'])
+    router = ROUTE(args['mac'], args['wlanname'], args['ch'])
     t1 = threading.Thread(target=handshake.starthandshake)
     t2 = threading.Thread(target=router.start)
     t1.start()
