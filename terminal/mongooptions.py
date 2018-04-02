@@ -35,7 +35,7 @@ def mobidata():
     db = client.swmdb
     mobi = db.mobi
     # 1升序，-1降序
-    cursor = mobi.find({}, {"_id": 0}).sort("onlinetime", -1)
+    cursor = mobi.find({}, {"_id": 0}).sort("offlinetime", -1)
     for el in cursor:
         online = datetime.datetime.fromtimestamp(int(el['onlinetime'])).strftime('%Y-%m-%d %H:%M:%S')
         offline = datetime.datetime.fromtimestamp(int(el['offlinetime'])).strftime('%Y-%m-%d %H:%M:%S')

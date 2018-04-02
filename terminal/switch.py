@@ -71,6 +71,10 @@ class WEBSWITCH:
     def shutdowntheshell(self, wlanname):
         call("ps -ef|grep hostapd|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
         call("ps -ef|grep dhcp|grep -v grep|cut -c 9-15|xargs kill -s 9", shell=True)
-        p = Popen('ifconfig {} down'.format(wlanname), shell=True)
+        Popen('ifconfig {} down'.format(wlanname), shell=True)
+        Popen('rm -rf {}'.format(self.hostapdlog), shell=True)
+        Popen('touch {}'.format(self.hostapdlog), shell=True)
+        Popen('rm -rf {}'.format(self.dhcplog), shell=True)
+        Popen('touch {}'.format(self.dhcplog), shell=True)
         # call("ifconfig {} down".format(wlanname), shell=True)
         return
